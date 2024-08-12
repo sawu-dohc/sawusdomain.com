@@ -1,0 +1,98 @@
+/* Existing CSS */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.data-container {
+    display: flex;
+    justify-content: center; /* Center the two sections horizontally */
+    gap: 20px; /* Add space between the two sections */
+}
+
+.data-section {
+    flex: 0 1 300px; /* Set a max width for each section and allow them to shrink if needed */
+    margin-bottom: 20px;
+}
+
+.label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: center; /* Center the label text */
+}
+
+.average {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center; /* Center the average text */
+}
+
+.data-box {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    white-space: pre-wrap; /* Preserves newlines */
+    max-width: 300px; /* Limit the maximum width of each data box */
+    box-sizing: border-box;
+    word-wrap: break-word; /* Ensures long words break to avoid overflow */
+}
+
+.traffic-signal-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between each row */
+    margin-top: 20px;
+    margin-left: 30%;
+    text-align: center;
+}
+
+.signal-row {
+    display: flex;
+    align-items: center; /* Vertically center the items in each row */
+    gap: 10px; /* Space between the signal light and the text */
+}
+
+.signal {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ccc; /* Default to grey/off */
+    opacity: 0.3; /* Dimmed by default */
+    transition: opacity 0.3s ease; /* Smooth transition for the light */
+}
+
+/* Active state for traffic signals */
+.signal.active {
+    opacity: 1; /* Bright when active */
+}
+
+/* Colors for specific signals */
+#signal-red.active {
+    background-color: red;
+}
+
+#signal-yellow.active {
+    background-color: yellow;
+}
+
+#signal-green.active {
+    background-color: green;
+}
+
+.description-text {
+    font-size: 16px;
+    color: #333;
+}
+
+.ticker-selector {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

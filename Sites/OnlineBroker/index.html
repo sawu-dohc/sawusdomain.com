@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Rich Quick For Free</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Ticker Data</h1>
+
+    <div class="ticker-selector">
+        <label for="ticker-select">Select Ticker:</label>
+        
+        <select id="ticker-select">
+            <!-- Options will be populated by JavaScript -->
+             <option>BTC-USD</option>
+        </select>
+    </div>
+
+    <div class="data-container">
+        <!-- Long-Term Data Section -->
+        <div class="data-section">
+            <div class="label">Long Term</div>
+            <div class="average" id="long-term-average">
+                Average: <span id="long-term-average-value"></span>
+            </div> <!-- Average value for Long Term -->
+            <div class="data-box" id="long-term-data-box">
+                <!-- Long-term data will be inserted here -->
+            </div>
+        </div>
+    
+        <!-- Short-Term Data Section -->
+        <div class="data-section">
+            <div class="label">Short Term</div>
+            <div class="average" id="short-term-average">
+                Average: <span id="short-term-average-value"></span>
+            </div> <!-- Average value for Short Term -->
+            <div class="data-box" id="short-term-data-box">
+                <!-- Short-term data will be inserted here -->
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="traffic-signal-container">
+        <div class="signal-row">
+            <div id="signal-red" class="signal light"></div>
+            <div id="sell-description" class="description-text">
+                The short-term average is lower than the long-term average, indicating a downward trend. A normal broker would tell you to sell now but if you want to make BIG money you would buy now. Its called catching a falling knife.
+            </div>
+        </div>
+        <div class="signal-row">
+            <div id="signal-yellow" class="signal light"></div>
+            <div id="wait-description" class="description-text">
+                The short-term and long-term averages are equal, indicating uncertainty. Buy a little maybe or just wait. 
+            </div>
+        </div>
+        <div class="signal-row">
+            <div id="signal-green" class="signal light"></div>
+            <div id="buy-description" class="description-text">
+                The short-term average is higher than the long-term average, indicating an upward trend. A normal broker would tell you to buy and ride the wave upwards but i say start selling. 
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <script src="JavaScript/getTickers.js"></script>
+
+    <script src="JavaScript/addLongTermData.js"></script>
+    <script src="JavaScript/addShortTermData.js"></script>
+
+
+    <script src="JavaScript/tickerSelectionListener.js"></script>
+    <script src="JavaScript/signalControl.js"></script>
+     
+</body>
+</html>

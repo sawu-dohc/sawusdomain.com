@@ -1,0 +1,76 @@
+
+body{
+    
+}
+
+h1 {
+    color: white;
+    text-align: center;   
+    justify-content: center; 
+    padding-top: 20px;
+}
+
+h2 {
+    
+}
+
+
+h3 {
+
+}
+
+#minutes, #seconds {
+    background-color: black;
+    width: 60px;  
+    height: 60px; 
+    align-items: center; /* needed to center */
+    justify-content: center;  /* needed to center */
+    color: white;
+    font-size: 40px;  
+    display: flex;
+    
+    
+}
+#colon{
+    font-size: 60px;
+}
+#minutesLabel, #secondsLabel{
+    color: rgb(8, 90, 183);
+    font-size: 20px;
+}
+
+
+.outerBlueWrapper {
+    background-color: rgb(45, 153, 241);
+    text-align: center;
+    width: 650px;
+    height: 250px;
+}
+
+.innerYellowWrapper {
+    background-color: rgb(249, 207, 69);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    width: 650px;
+    height: 275px;
+}
+
+.timerObjectWrapper {
+    width: 175px;
+    height: 125px;
+    background-color: gray; 
+    padding: 20px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 20px; 
+    
+}
+
+.timeDisplayWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}

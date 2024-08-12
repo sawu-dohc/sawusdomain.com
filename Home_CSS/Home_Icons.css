@@ -1,0 +1,52 @@
+.Icon {
+  width: 13rem;
+  height: auto;
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+
+}
+.Icon img {
+  width: 5.5rem; 
+  height:auto;
+  cursor: pointer;
+  
+}
+.Icon h2 {
+  color: #fff; 
+
+  font-family: 'W95FA', sans-serif; 
+  font-size: 1.75rem;
+  font-weight: 100;
+
+  width: fit-content;
+  text-align: center; 
+  margin: 0;
+
+  
+}
+.Icon p {
+  display: none;
+}
+@media (max-width: 1400px) {
+  .Icon {
+    max-width: 5.5rem;
+
+  }
+
+  .Icon img {
+    width: 2.5rem;
+  }
+
+  .Icon h2 {
+    font-size: .85rem;
+    
+
+  }
+  #desktop {
+    padding:0;
+    padding-top:10px;
+  }
+}

@@ -1,0 +1,119 @@
+#taskbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #c0c0c0;
+
+  border-top: 0.25rem solid #eaeaea;
+  border-left: 0.25rem solid #eaeaea;
+  border-right: 0.25rem solid #808080;
+  border-bottom: 0.25rem solid #808080;
+
+  height: 4.5rem;
+  min-height: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  position: fixed; /* Keep the taskbar fixed at the bottom */
+  bottom: 0; /* Align to the bottom of the viewport */
+  padding: 0.12rem; /* Add some padding to the sides */
+}
+
+#start-button {
+  display: flex;
+  align-items: center;
+  padding-left: .75rem;
+  padding-right: .5rem;
+  margin-left: .25rem;
+
+
+
+  background-color: #c0c0c0;
+  border: 0.25rem solid #808080;
+  border-top-color: #eaeaea;
+  border-left-color: #eaeaea;
+
+  cursor: pointer;
+
+  font-family: 'W95FA', sans-serif;
+  font-size: 2.75rem; 
+  text-shadow: none;
+
+}
+
+#start-button:active, #start-button.clicked {
+  background-color: #d0d0d0;
+  border-top-color: #808080;
+  border-left-color: #808080;
+  border-right-color: #eaeaea;
+  border-bottom-color: #eaeaea;
+}
+
+#start-button img {
+  width: 3rem;
+  height: auto; 
+
+  margin-right: 0.25rem;
+  margin-left: 0.25rem;
+}
+
+#clock {
+  display: flex;
+  align-items: center;
+
+  background-color: #c0c0c0;
+  border: 0.25rem solid #808080;
+  border-top-color: #808080;
+  border-left-color: #808080;
+  border-right-color: #eaeaea;
+  border-bottom-color: #eaeaea;
+
+  padding-left: .5rem;
+  padding-right: .5rem;
+  margin-right: .125rem;
+  font-family: 'W95FA', sans-serif;
+  font-size: 2.5rem; 
+  color: #000000;
+}
+
+@media (max-width: 1400px) {
+  #taskbar {
+    height: 2.5rem; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-width: .125rem;
+  }
+
+  #start-button {
+    display: flex;
+    align-items: center;
+
+    font-size: 1rem; 
+    padding: 0.2rem; 
+
+    margin-left: 0;
+    height: 2rem; 
+    box-sizing: border-box;
+
+    border-width: 0.125rem;
+
+  }
+
+  #start-button img {
+    width: 1.5rem; 
+    height: auto; 
+    margin-right: 0.15rem; 
+    margin-left: 0.15rem; 
+  }
+
+  #clock {
+    display: flex;
+    align-items: center;
+    font-size: 1rem; 
+    padding: 0.2rem;
+    height: 2rem; 
+    box-sizing: border-box; 
+    margin-right: 0;
+    border-width: 0.125rem;
+  }
+}
