@@ -6,7 +6,7 @@ function populateTableMethod(user_Object, partners_Array) {
 
 
 
-    const columnOrder_Array = ['Partner_ID', 'CompanyName', 'CompanyPhone', 'StreetAddress', 'City', 'State', 'ZIPCode', 'ProductDescription', 'ContactName', 'ContactTitle', 'ContactPhone', 'ContactEmail', 'PayRate', 'FullTime', 'PartTime', 'Medical', 'Dental', 'RetirementPlan', 'PaidTimeOff', 'TIG', 'SprayTransfer', 'ShortCircuit', 'FluxCore', 'Stick', 'Other', 'FirstShift', 'SecondShift', 'ThirdShift', 'WeldTestDescription', 'Notes'];
+    const columnOrder_Array = ['Partner_ID', 'CompanyName', 'CompanyPhone', 'City', 'ZIPCode', 'ContactName', 'ContactTitle', 'ContactPhone', 'ContactEmail', 'PayRate', 'TIG', 'SprayTransfer', 'ShortCircuit', 'FluxCore', 'Stick', 'Other'];
 
 
     if (user_Object.hasPermissionMethod('admin') == true ) {
