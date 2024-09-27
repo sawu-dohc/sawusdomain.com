@@ -1,35 +1,35 @@
-document.addEventListener("DOMContentLoaded", function() {
-    fetch('https://www.sawusdomain.com/Sites/OnlineBroker/PHP/getTickersScript.php')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json(); // Parse the response as JSON
-        })
-        .then(data => {
-            const tickerSelect = document.getElementById('ticker-select'); // Get the select element
+// URL for the CoinGecko API endpoint to get a list of all coins
+const url = 'https://api.coingecko.com/api/v3/coins/list';
 
-            // Clear existing options (optional)
-            tickerSelect.innerHTML = '';
+// List of full names for the coins you want to include
+const targetNames = ['Bitcoin', 'Ethereum', 'Dogecoin', 'Litecoin'];
 
-            data.forEach(pair => {
-                const tickerSymbol = pair.id; // Extract the ticker symbol from the 'id' key
-                
-                // Create a new option element
-                const option = document.createElement('option');
-                option.value = tickerSymbol; // Set the value of the option
-                option.textContent = tickerSymbol; // Set the text content of the option
+// Function to populate the ticker selector
+function populateTickerSelector(data) {
+    const selectElement = document.getElementById('ticker-select');
+    
+    // Filter the data to include only the target names
+    const filteredData = data.filter(coin => targetNames.includes(coin.name));
+    
+    filteredData.forEach(coin => {
+        const option = document.createElement('option');
+        option.value = coin.id;
+        option.textContent = `${coin.name} (${coin.symbol.toUpperCase()})`;
+        selectElement.appendChild(option);
+    });
+}
 
-                // Set the default option to BTC-USD
-                if (tickerSymbol === 'BTC-USD') {
-                    option.selected = true; // Set this option as selected
-                }
-
-                // Append the option to the select element
-                tickerSelect.appendChild(option);
-            });
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
+// Fetch data from the API and populate the selector
+fetch(url, {
+    method: 'GET',
+    headers: {
+        'Accept': 'application/json'
+    }
+})
+.then(response => response.json())  // Convert the response to JSON
+.then(data => {
+    populateTickerSelector(data);
+})
+.catch(error => {
+    console.error('Error:', error);  // Handle any errors
 });

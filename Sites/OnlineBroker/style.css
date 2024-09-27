@@ -53,8 +53,8 @@ h1 {
 }
 
 .signal-row {
-    display: flex;
-    align-items: center; /* Vertically center the items in each row */
+    display: table-column;
+    align-items:baseline; /* Vertically center the items in each row */
     gap: 10px; /* Space between the signal light and the text */
 }
 

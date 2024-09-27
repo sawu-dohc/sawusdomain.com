@@ -1,26 +1,42 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const tickerSelect = document.getElementById('ticker-select');
+const options = { method: 'GET', headers: { accept: 'application/json' } };
 
-    let dataLoadCounter = 0;
+// Function to fetch data for a specific coin
+function fetchCoinData(coinId) {
+    console.log(`Fetching data for ${coinId}...`); // Debugging log
+    return fetch(`https://pro-api.coingecko.com/api/v3/coins/${coinId}`, options)
+        .then(response => response.json())
+        .then(data => {
+            console.log(`${coinId} data:`, data); // Debugging log
+            return data;
+        })
+        .catch(err => {
+            console.error(`Error fetching ${coinId} data:`, err);
+            return null;
+        });
+}
 
-    function checkDataReady() {
-        dataLoadCounter++;
-        if (dataLoadCounter === 2) { // Both data sets are ready
-            signalControl();
-            dataLoadCounter = 0; // Reset counter for next selection
-        }
+// Function to handle selection change
+function handleSelectionChange(event) {
+    const selectedCoinId = event.target.value;
+    console.log(`Selected coin ID: ${selectedCoinId}`); // Debugging log
+    if (selectedCoinId) {
+        fetchCoinData(selectedCoinId).then(data => {
+            if (data) {
+                // Example: Displaying the coin's current price
+                const price = data.market_data.current_price ? data.market_data.current_price.usd : 'N/A';
+                document.getElementById('long-term-average-value').textContent = price;
+                
+                // Update other elements as needed
+                // e.g., document.getElementById('short-term-average-value').textContent = ...;
+            } else {
+                console.log(`No data for ${selectedCoinId}`);
+            }
+        });
     }
+}
 
-    function onTickerChange() {
-        const selectedTicker = tickerSelect.value;
-        dataLoadCounter = 0; // Reset counter
-        addLongTermData(selectedTicker, checkDataReady);
-        addShortTermData(selectedTicker, checkDataReady);
-    }
+// Attach event listener to the ticker select element
+document.getElementById('ticker-select').addEventListener('change', handleSelectionChange);
 
-    // Listen for changes in ticker selection
-    tickerSelect.addEventListener('change', onTickerChange);
-
-    // Trigger the change event when the page loads to populate data initially
-    onTickerChange();
-});
+// Verify that the script is loaded
+console.log('tickerSelectionListener.js script loaded');
