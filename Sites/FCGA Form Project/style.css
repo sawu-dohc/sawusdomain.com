@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 2%;
+    
+    /* For 96 PPI (Screen Resolution) */
+    width: 816px; 
+    height: 1056px; 
+    
+    /* For 300 PPI (High-Resolution Print)
+    max-width: 2550px; 
+    max-height: 3300px; */
+    
+    padding: 40px;
+    border: 3px solid black;
+    font-size: 15px;
+}
+
+#logo {
+    width: 75px;
+}
+
+h1 {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 900;
+    margin: 0 0 0 40px;
+}
+
+h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+}
+
+/* General Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+    padding: 2px;
+    text-align: center;
+}
+
+
+/* Row-Specific Styling */
+#row-1 td {
+    text-align: justify;
+    border: none;
+}
+
+#row-2 {
+    border: 1px solid black; 
+    border-bottom:none;
+}
+
+#row-2 td {
+    border: none; 
+    text-align: left;
+}
+
+#row-3 td {
+    text-align: left;
+}
+
+#row-4 td {
+    background-color: #d3d3d3; 
+    font-weight: bold;
+    text-align: left;
+}
+
+#row-5-7 td {
+    text-align: left;
+}
+
+#row-8 td {
+    text-align: left;
+    border-top:none;
+}
+
+#row-9 td {
+    background-color: #d3d3d3; 
+    font-weight: bold;
+    text-align: left;
+}
+
+#row-10-13 td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+#row-10-13 td:first-child {
+    text-align: left;
+}
+
+#row-14 td {
+    text-align: justify;
+    font-style: italic;
+}
+
+#row-15 td {
+    background-color: #d3d3d3; 
+    font-weight: bold;
+    text-align: left;
+}
+
+#row-16 td {
+    text-align: justify;
+    padding: 5px;
+}
+
+#row-17 td {
+    background-color: #d3d3d3; 
+    font-weight: bold;
+    text-align: left;
+    font-size: 14px;
+}
+
+#row-18 td {
+    text-align: justify;
+    border-bottom: none;
+}
+
+#row-19 td {
+    text-align: left;
+}
+
+#row-20 td {
+    background-color: #d3d3d3; 
+    font-weight: bold;
+    text-align: left;
+}
+
+#row-21 td {
+    background-color: #d3d3d3;
+    text-align: left;
+}
+
+#row-22 td {
+    border: none;
+    text-align: left;
+    font-style: italic;
+}
+
+#row-23 td {
+    border: none;
+    text-align: center;
+}

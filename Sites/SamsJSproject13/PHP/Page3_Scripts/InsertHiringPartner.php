@@ -35,9 +35,9 @@ $thirdShift = isset($_POST['shift']) && in_array('Third Shift', $_POST['shift'])
 $weldTestDescription = $_POST['weldTest_description'];
 $Notes = $_POST['notes'];
 $username = $_SESSION['username'];
-$IPaddress = $_SERVER['REMOTE_ADDR'];
+$IPAddress = $_SERVER['REMOTE_ADDR'];
 
-$sql = "INSERT INTO Hiring_Partners_Table (CompanyName, CompanyPhone, StreetAddress, City, State, ZIPCode, ProductDescription, ContactName, ContactTitle, ContactPhone, ContactEmail, PayRate, FullTime, PartTime, Medical, Dental, RetirementPlan, PaidTimeOff, TIG, SprayTransfer, ShortCircuit, FluxCore, Stick, Other, FirstShift, SecondShift, ThirdShift, WeldTestDescription, Notes, User, IPAddress) VALUES ('$partnerName', '$companyPhone', '$streetAddress', '$city', '$state', '$zip', '$productDescription', '$contactName', '$contactTitle', '$contactPhone', '$contactEmail', '$payRate', '$isFullTime', '$isPartTime', '$hasMedicalBenefits', '$hasDentalBenefits', '$hasRetirementBenefits', '$hasPaidTimeOff', '$tig', '$sprayTransfer', '$shortCircuit', '$fluxCore', '$stick', '$other', '$firstShift', '$secondShift', '$thirdShift', '$weldTestDescription', '$Notes', '$username', '$IPaddress')";
+$sql = "INSERT INTO Hiring_Partners_Table (CompanyName, CompanyPhone, StreetAddress, City, State, ZIPCode, ProductDescription, ContactName, ContactTitle, ContactPhone, ContactEmail, PayRate, FullTime, PartTime, Medical, Dental, RetirementPlan, PaidTimeOff, TIG, SprayTransfer, ShortCircuit, FluxCore, Stick, Other, FirstShift, SecondShift, ThirdShift, WeldTestDescription, Notes, User, IPAddress) VALUES ('$partnerName', '$companyPhone', '$streetAddress', '$city', '$state', '$zip', '$productDescription', '$contactName', '$contactTitle', '$contactPhone', '$contactEmail', '$payRate', '$isFullTime', '$isPartTime', '$hasMedicalBenefits', '$hasDentalBenefits', '$hasRetirementBenefits', '$hasPaidTimeOff', '$tig', '$sprayTransfer', '$shortCircuit', '$fluxCore', '$stick', '$other', '$firstShift', '$secondShift', '$thirdShift', '$weldTestDescription', '$Notes', '$username', '$IPAddress')";
 
 if ($conn->query($sql) === TRUE) {
     header('Content-Type: application/json');

@@ -10,7 +10,6 @@ include __DIR__ . '/../UtilityScripts/DatabaseConnection.php';
 $username = $_POST['username']; // get username from POST data
 $password = $_POST['password']; // get password from POST data
 
-
 $stmt = $conn->prepare(
     "SELECT * 
      FROM Users_Table 
@@ -23,7 +22,7 @@ $result = $stmt->get_result(); // get query result
 
 $rows = $result->fetch_all(MYSQLI_ASSOC); // fetch all rows as associative array
 
-if ($rows[0] != null) { // if user found
+if (!empty($rows)) { // if user found
     $row = $rows[0]; // get the first row
     
     // set session variables
@@ -31,14 +30,21 @@ if ($rows[0] != null) { // if user found
     $_SESSION['password'] = $row['password'];
     $_SESSION['permissions'] = $row['permissions'];
 
-    // return a JSON response
+    // return a JSON response with required data
     header('Content-Type: application/json');
-    echo json_encode(['status' => 'success', 'message' => 'PHP: success']);
-} 
-else { // if user not found
+    echo json_encode([
+        'status' => 'success',
+        'username' => $row['username'],
+        'password' => $row['password'],
+        'permissions' => $row['permissions']
+    ]);
+} else { // if user not found
     // return a JSON response for invalid credentials
     header('Content-Type: application/json');
-    echo json_encode(['status' => 'error', 'message' => 'PHP: error']);
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'Invalid username or password'
+    ]);
 }
 
 $stmt->close(); // close the prepared statement
