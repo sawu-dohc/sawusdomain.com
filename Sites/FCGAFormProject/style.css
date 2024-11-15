@@ -47,7 +47,7 @@ td {
 }
 
 
-/* Row-Specific Styling */
+/* Row specific styling */
 #row-1 td {
     text-align: justify;
     border: none;
@@ -141,7 +141,6 @@ td {
     vertical-align: top;
     
 }
-
 
 #row-22 td {
     border: none;

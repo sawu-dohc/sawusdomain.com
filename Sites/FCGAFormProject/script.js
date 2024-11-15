@@ -1,12 +1,32 @@
-// variables
+// Row 2: Deduction Choice
+const beginDeduction_Button = document.getElementById("begin-deduction_Button");
+const changeDeduction_Button = document.getElementById("change-deduction_Button");
+const stopDeduction_Button = document.getElementById("stop-deduction_Button");
+
+// Row 3: Effective Date
 const effectiveDate_Field = document.getElementById("effective-date_Field");
+
+// Row 5-7: Employee Information (Section 1)
+const name_Field = document.getElementById("name_Field");
+const phone_Field = document.getElementById("phone_Field");
+const address_Field = document.getElementById("address_Field");
 const dob_Field = document.getElementById("dob_Field");
+const email_Field = document.getElementById("email_Field");
 const age_Field = document.getElementById("age_Field");
+const employeeId_Field = document.getElementById("employee-id_Field");
+
+// Row 16: HSA Contributions (Section 2)
 const annualContribution_Field1 = document.getElementById("annual-contribution_Field1");
+
+// Row 19: Employee Signature (Section 4)
 const signature_Field = document.getElementById("signature_Field");
 const signatureDate_Field = document.getElementById("signature-date_Field");
+
+// Row 21: Benefits Office Use
+const annualContribution_Field2 = document.getElementById("annual-contribution_Field2");
 const remainingPaychecks_Field = document.getElementById("remaining-paychecks_Field");
-const perPaycheckContribution_Field = document.getElementById("per-paycheck-contribution_Field"); 
+const perPaycheckContribution_Field = document.getElementById("per-paycheck-contribution_Field");
+
 
 // on dom content loaded, prefill fields and attach event listeners
 document.addEventListener("DOMContentLoaded", function () {
@@ -25,17 +45,30 @@ function prefillSignatureDate() {
     let month = String(today.getMonth() + 1).padStart(2, '0'); // pad month with leading zero
     let day = String(today.getDate()).padStart(2, '0'); // pad day with leading zero
 
-    const formattedDate = `${year}-${month}-${day}`;
+    const formattedDate = ${year}-${month}-${day};
     signatureDate_Field.value = formattedDate;
 }
 
-// prefill remaining paychecks based on the current date
 function prefillRemainingPaychecks() {
     const today = new Date();
-    const yearEnd = new Date(today.getFullYear(), 11, 31); // december 31st of the current year
-    const daysRemaining = Math.ceil((yearEnd - today) / (1000 * 60 * 60 * 24)); // days left in the year
-    const remainingPaychecks = Math.ceil(daysRemaining / 14); // assuming biweekly pay
-    remainingPaychecks_Field.value = remainingPaychecks; // prefill the remaining paychecks field
+
+    const currentMonth = today.getMonth(); // store the current month in a variable
+
+    const monthsRemaining = 11 - currentMonth; // months left in the year
+
+    // calculate remaining paychecks in future months
+    let remainingPaychecks = monthsRemaining * 2;
+
+    // add remaining paychecks for the current month
+    if (today.getDate() > 14) {
+        remainingPaychecks = remainingPaychecks + 1; // only one paycheck remains this month
+    } 
+    else {
+        remainingPaychecks = remainingPaychecks + 2; // both paychecks remain this month
+    }
+
+    // set the remaining paychecks field
+    remainingPaychecks_Field.value = remainingPaychecks;
 }
 
 // validate date of birth and prefill age on blur
@@ -54,7 +87,8 @@ function validateAgeOnBlur() {
     const age = calculateAge(dob_DateObject);
     if (age >= 18 && age <= 120) {
         age_Field.value = age;
-    } else {
+    } 
+    else {
         alert("age must be between 18 and 120.");
         age_Field.value = ""; // clear the age field if invalid
     }
@@ -79,13 +113,15 @@ annualContribution_Field1.addEventListener("blur", function () {
     if (annualContribution < 1 || annualContribution > 8550) {
         alert("annual contribution must be between 1 and 8550.");
         annualContribution_Field1.value = ""; 
-    } else {
+    } 
+    else {
         calculatePerPaycheckContribution(); 
     }
 });
 
 // calculate per-paycheck contribution based on the annual contribution and remaining paychecks
 function calculatePerPaycheckContribution() {
+    
     const annualContribution = parseFloat(annualContribution_Field1.value);
     const remainingPaychecks = parseInt(remainingPaychecks_Field.value);
 
