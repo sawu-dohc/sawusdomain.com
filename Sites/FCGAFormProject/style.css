@@ -152,3 +152,18 @@ td {
     border: none;
     text-align: center;
 }
+
+#submit-Button{
+    background-color: #4CAF50; 
+    color: white;              
+    padding: 7px 24px;                      
+    border-radius: 4px;        /* Rounded corners */
+    cursor: pointer;           /* Pointer cursor on hover */
+    font-size: 16px;           /* Font size */
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+#submit-Button:hover {
+    background-color: green;
+}

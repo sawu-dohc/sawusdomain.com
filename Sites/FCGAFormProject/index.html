@@ -72,7 +72,7 @@
                     </td>
                     <td>
                         <label for="phone_Field">Phone number:</label>
-                        <input type="tel" id="phone_Field" name="phone" pattern="\d{3}-\d{3}-\d{4}" maxlength="12" placeholder="123-456-7890" required>
+                        <input type="tel" id="phone_Field" name="phone" maxlength="12" placeholder="123-456-7890" required>
                     </td>
                 </tr>
                 <tr>
@@ -225,7 +225,20 @@
             
     </main>
 
-    <script src="Script.js"></script>
+    <script src="Scripts/prefillRemainingPaychecks.js"></script>
+    <script src="Scripts/prefillSignatureDate.js"></script>
+
+    <script src="Scripts/calcualteAge.js"></script>
+    <script src="Scripts/calculatePerPaycheckContribution.js"></script>
+
+    <script src="Scripts/validateAge.js"></script>
+    <script src="Scripts/validateAnnualContribution.js"></script>
+    <script src="Scripts/validateSQLInjection.js"></script>
+
+    <script src="Scripts/handleSubmit.js"></script>
+    
+    
+
         
 </body>
 </html>
