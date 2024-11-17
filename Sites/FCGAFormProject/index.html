@@ -15,7 +15,7 @@
     </header>
 
     <main>
-        <form action="#" method="post">
+        <form id="form" action="#" method="post">
             <table id="row-1">
                 <tr>
                     <td>
@@ -51,7 +51,7 @@
                 <tr>
                     <td>
                         Effective date:
-                        <input type="date" id="effective-date_Field" name="effective-date" max="2025-12-31" required>
+                        <input type="date" id="effective-date_Field" name="effective-date" max="2025-12-31" value="2025-12-30" required>
                         (your payroll office can confirm the effective date)
                     </td>
                     
@@ -225,16 +225,27 @@
             
     </main>
 
-    <script src="Scripts/prefillRemainingPaychecks.js"></script>
-    <script src="Scripts/prefillSignatureDate.js"></script>
+    <script src="Scripts/PrefillScripts/prefillAge.js"></script>
+    <script src="Scripts/PrefillScripts/prefillPerPaycheckContribution.js"></script>
+    <script src="Scripts/PrefillScripts/prefillRemainingPaychecks.js"></script>
+    <script src="Scripts/PrefillScripts/prefillSignatureDate.js"></script>
 
-    <script src="Scripts/calcualteAge.js"></script>
-    <script src="Scripts/calculatePerPaycheckContribution.js"></script>
 
-    <script src="Scripts/validateAge.js"></script>
-    <script src="Scripts/validateAnnualContribution.js"></script>
-    <script src="Scripts/validateSQLInjection.js"></script>
-
+    <script src="Scripts/ValidationScripts/validateAddress.js"></script>
+    <script src="Scripts/ValidationScripts/validateAge.js"></script>
+    <script src="Scripts/ValidationScripts/validateAnnualContribution.js"></script>
+    <script src="Scripts/ValidationScripts/validateDateOfBirth.js"></script>
+    <script src="Scripts/ValidationScripts/validateDeductionSelection.js"></script>
+    <script src="Scripts/ValidationScripts/validateEffectiveDate.js"></script>
+    <script src="Scripts/ValidationScripts/validateEmail.js"></script>
+    <script src="Scripts/ValidationScripts/validateEmployeeID.js"></script>
+    <script src="Scripts/ValidationScripts/validateName.js"></script>
+    <script src="Scripts/ValidationScripts/validatePerPaycheckContribution.js"></script>
+    <script src="Scripts/ValidationScripts/validatePhone.js"></script>
+    <script src="Scripts/ValidationScripts/validateSignature.js"></script>
+    <script src="Scripts/ValidationScripts/validateSignatureDate.js"></script>
+    <script src="Scripts/ValidationScripts/validateSQLInjection.js"></script>
+    
     <script src="Scripts/handleSubmit.js"></script>
     
     

@@ -10,7 +10,7 @@ function prefillRemainingPaychecks() {
 
     let remainingPaychecks = monthsRemaining * 2;
 
-    if (today.getDate() > 14) {
+    if ( today.getDate() > 14 ) {
         remainingPaychecks += 1; // add 1 if date is greater than 14
     } 
     else {
