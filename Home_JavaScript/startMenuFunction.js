@@ -1,9 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    
     function toggleStartMenu() {
+        
         const startMenu = document.getElementById('start-menu');
         if (startMenu.style.display === 'none' || startMenu.style.display === '') {
             startMenu.style.display = 'flex';
-        } else {
+        } 
+        else {
             startMenu.style.display = 'none';
         }
     }

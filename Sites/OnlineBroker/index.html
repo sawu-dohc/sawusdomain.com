@@ -6,14 +6,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Ticker Data</h1>
+    <h1>Currency Data</h1>
 
     <div class="ticker-selector">
-        <label for="ticker-select">Select Ticker:</label>
-        
-        <select id="ticker-select">
-            <!-- Options will be populated by JavaScript -->
-        </select>
+       
+        <div class="ticker-selector">
+            <select id="currency-selection-menu">
+                <option value="" disabled selected>Select a currency</option>
+                <!-- Options will be populated by JavaScript -->
+            </select>
+
+        </div>
     </div>
 
     <div class="data-container">
@@ -45,27 +48,25 @@
         <div class="signal-row">
             <div id="signal-red" class="signal light"></div>
             <div id="sell-description" class="description-text">
-                The short-term average is lower than the long-term average, indicating a downward trend. A normal broker would tell you to sell now but if you want to make BIG money you would buy now. Its called catching a falling knife.
+
             </div>
         </div>
         <div class="signal-row">
             <div id="signal-yellow" class="signal light"></div>
             <div id="wait-description" class="description-text">
-                The short-term and long-term averages are equal, indicating uncertainty. Buy a little maybe or just wait. 
+
             </div>
         </div>
         <div class="signal-row">
             <div id="signal-green" class="signal light"></div>
             <div id="buy-description" class="description-text">
-                The short-term average is higher than the long-term average, indicating an upward trend. A normal broker would tell you to buy and ride the wave upwards but i say start selling. 
+
             </div>
         </div>
     </div>
     
     
-
-    <script src="JavaScript/getTickers.js"></script>
-    <script src="JavaScript/tickerSelectionListener.js"></script>
+    <script src="Main.js"></script>
 
      
 </body>

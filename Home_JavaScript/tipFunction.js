@@ -1,7 +1,7 @@
-document.addEventListener('DOMContentLoaded', () => {
+function initializeTooltips() {
     const tooltip = document.getElementById('tooltip');
 
-    document.getElementById('desktop').addEventListener('mouseenter', event => {
+    document.getElementById('desktop').addEventListener('mouseenter', function (event) {
         const iconElement = event.target.closest('.Icon');
         if (iconElement) {
             const tooltipTextElement = iconElement.querySelector('p');
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, true);
 
-    document.getElementById('desktop').addEventListener('mouseleave', event => {
+    document.getElementById('desktop').addEventListener('mouseleave', function (event) {
         const iconElement = event.target.closest('.Icon');
         if (iconElement) {
             hideTooltip();
@@ -24,21 +24,20 @@ document.addEventListener('DOMContentLoaded', () => {
         let top = rect.top + window.scrollY;
         let left = rect.left + window.scrollX;
 
-        // Adjust position to prevent overflow on the X-axis
+        // adjust position to prevent overflow on the X-axis
         if (left + tooltipRect.width > window.innerWidth) {
-            left = rect.left - tooltipRect.width - 10; // Position tooltip on the left side of the icon
-        }
-        else {
-            left = rect.left + 100; // Position tooltip on the right side of the icon
+            left = rect.left - tooltipRect.width - 10; 
+        } else {
+            left = rect.left + 100; 
         }
 
-        // Adjust position to prevent overflow on the Y-axis
+        // adjust position to prevent overflow on the Y-axis
         if (top + tooltipRect.height > window.innerHeight) {
-            top = window.innerHeight - tooltipRect.height - 10; // Adjust top if it overflows
+            top = window.innerHeight - tooltipRect.height - 10; 
         }
 
-        tooltip.style.top = `${top}px`;
-        tooltip.style.left = `${left+50}px`;
+        tooltip.style.top = top + "px";
+        tooltip.style.left = (left + 50) + "px";
     }
 
     function showTooltip() {
@@ -50,4 +49,4 @@ document.addEventListener('DOMContentLoaded', () => {
         tooltip.style.visibility = 'hidden';
         tooltip.style.opacity = '0';
     }
-});
+}

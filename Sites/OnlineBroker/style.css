@@ -41,15 +41,16 @@ h1 {
     max-width: 300px; /* Limit the maximum width of each data box */
     box-sizing: border-box;
     word-wrap: break-word; /* Ensures long words break to avoid overflow */
+    max-height: 500px; /* Set a maximum height */
+    overflow-y: auto; /* Enables vertical scrollbar if content overflows */
 }
 
 .traffic-signal-container {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Space between each row */
+    gap: 10px; 
     margin-top: 20px;
-    margin-left: 30%;
-    text-align: center;
+    align-items: center;
 }
 
 .signal-row {

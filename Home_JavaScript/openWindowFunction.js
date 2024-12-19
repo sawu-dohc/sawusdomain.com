@@ -17,11 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     function handleCloseButtonClick() {
+
         closeWindow(this.closest('.window').id);
     }
+
     function handleWindowClick( event ) {
+
         event.stopPropagation();
+
     }
+
     function handleIconClick( event ) {
 
         const iconElement = this.closest('.Icon');
@@ -36,18 +41,22 @@ document.addEventListener('DOMContentLoaded', function() {
         openWindow(windowId.replace('Icon', 'Window'));
     }
 
-
-
 });
 
 function openWindow(id) {
+
     const windowElement = document.getElementById(id);
+
     windowElement.style.visibility = 'visible';
+
     windowElement.style.display = 'flex';
+
 }
 
 function closeWindow(id) {
+
     const windowElement = document.getElementById(id);
+    
     windowElement.style.visibility = 'hidden';
 
 }

@@ -24,7 +24,7 @@
 .start-menu li {
   padding: 1rem;
   font-family: 'W95FA', sans-serif;
-  font-size: 3rem;
+  font-size: 2rem;
   cursor: pointer;
 
 }
@@ -78,7 +78,7 @@
     .vertical-text {
       color: white; 
       font-family:Arial, Helvetica, sans-serif; 
-      font-size: 1.5rem; 
+      font-size: 2rem; 
       transform: rotate(-90deg); 
       white-space: nowrap;
       position: absolute;
