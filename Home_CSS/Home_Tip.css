@@ -18,7 +18,5 @@
 }
 
 @media (max-width: 1000px) {
-    #tooltip {
-        display: none;
-    }
+
 }

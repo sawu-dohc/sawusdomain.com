@@ -2,72 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Get Rich Quick For Free</title>
+    <title>Cryptocurrency Divergence Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Currency Data</h1>
-
-    <div class="ticker-selector">
-       
-        <div class="ticker-selector">
-            <select id="currency-selection-menu">
-                <option value="" disabled selected>Select a currency</option>
-                <!-- Options will be populated by JavaScript -->
-            </select>
-
-        </div>
+    
+    <div class="title-container">
+        <h1 id="title-1">Divergence Calculator</h1>
+        <h1 id="title-1">Online Broker</h1>
+        <h1 id="title-2">Get Rich For Free App!</h1>
     </div>
 
-    <div class="data-container">
-        <!-- Long-Term Data Section -->
-        <div class="data-section">
-            <div class="label">Long Term</div>
-            <div class="average" id="long-term-average">
-                Average: <span id="long-term-average-value"></span>
-            </div> <!-- Average value for Long Term -->
-            <div class="data-box" id="long-term-data-box">
-                <!-- Long-term data will be inserted here -->
-            </div>
+    <!-- Container to group all relevant sections -->
+    <div id="main-container">
+        <select id="currency-menu">
+            <option value="" disabled selected>Select a currency</option>
+        </select>
+        <br>
+        <select id="strategy-menu" disabled>
+            <option value="" disabled selected>Select a strategy</option>
+            <option value="wolf">wolf</option>
+            <option value="normie">normie</option>
+        </select>
+
+        <div id="stats-box">
+            <div>Long-Term Average: $<span id="long-term-stat"></span></div>
+            <div>Short-Term Average: $<span id="short-term-stat"></span></div>
         </div>
-    
-        <!-- Short-Term Data Section -->
-        <div class="data-section">
-            <div class="label">Short Term</div>
-            <div class="average" id="short-term-average">
-                Average: <span id="short-term-average-value"></span>
-            </div> <!-- Average value for Short Term -->
-            <div class="data-box" id="short-term-data-box">
-                <!-- Short-term data will be inserted here -->
+        <div class="signal-container">
+
+            <div class="traffic-signal">
+
+                <div id="signal-green" class="signal"></div>
+                <div id="signal-yellow" class="signal"></div>
+                <div id="signal-red" class="signal"></div>
+
             </div>
+
+
         </div>
+        <div class="message-box">
+            <p id="message-text"></p>
+        </div>
+
+        <textarea id="text-box" readonly> </textarea>
     </div>
-    
 
-    <div class="traffic-signal-container">
-        <div class="signal-row">
-            <div id="signal-red" class="signal light"></div>
-            <div id="sell-description" class="description-text">
+    <script src="Scripts/addEventListener_CurrencyMenu.js"></script>
+    <script src="Scripts/addEventListener_StrategyMenu.js"></script>
+    <script src="Scripts/getCryptoData.js"></script>
+    <script src="Scripts/getCryptoNames.js"></script>
+    <script src="Scripts/setLight.js"></script>
+    <script src="Scripts/calculateSTA.js"></script>
+    <script src="Scripts/calculateLTA.js"></script>
+    <script src="Scripts/executeQuery.js"></script>
+    <script src="Scripts/populateMenu.js"></script>
+    <script src="Scripts/populateTextBox.js"></script>
 
-            </div>
-        </div>
-        <div class="signal-row">
-            <div id="signal-yellow" class="signal light"></div>
-            <div id="wait-description" class="description-text">
-
-            </div>
-        </div>
-        <div class="signal-row">
-            <div id="signal-green" class="signal light"></div>
-            <div id="buy-description" class="description-text">
-
-            </div>
-        </div>
-    </div>
-    
-    
     <script src="Main.js"></script>
-
-     
 </body>
 </html>

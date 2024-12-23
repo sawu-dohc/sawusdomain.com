@@ -1,5 +1,5 @@
 .Icon {
-  width: 13rem;
+  width: 75%;
   height: auto;
 
   text-align: center;
@@ -9,7 +9,7 @@
 
 }
 .Icon img {
-  width: 5.5rem; 
+  width: 75%; 
   height:auto;
   cursor: pointer;
   
@@ -31,22 +31,5 @@
   display: none;
 }
 @media (max-width: 1400px) {
-  .Icon {
-    max-width: 5.5rem;
 
-  }
-
-  .Icon img {
-    width: 2.5rem;
-  }
-
-  .Icon h2 {
-    font-size: .85rem;
-    
-
-  }
-  #desktop {
-    padding:0;
-    padding-top:10px;
-  }
 }

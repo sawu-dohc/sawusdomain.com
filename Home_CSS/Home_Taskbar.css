@@ -76,44 +76,5 @@
 }
 
 @media (max-width: 1400px) {
-  #taskbar {
-    height: 2.5rem; 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-width: .125rem;
-  }
 
-  #start-button {
-    display: flex;
-    align-items: center;
-
-    font-size: 1rem; 
-    padding: 0.2rem; 
-
-    margin-left: 0;
-    height: 2rem; 
-    box-sizing: border-box;
-
-    border-width: 0.125rem;
-
-  }
-
-  #start-button img {
-    width: 1.5rem; 
-    height: auto; 
-    margin-right: 0.15rem; 
-    margin-left: 0.15rem; 
-  }
-
-  #clock {
-    display: flex;
-    align-items: center;
-    font-size: 1rem; 
-    padding: 0.2rem;
-    height: 2rem; 
-    box-sizing: border-box; 
-    margin-right: 0;
-    border-width: 0.125rem;
-  }
 }

@@ -1,4 +1,9 @@
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .start-menu {
     display: none;
@@ -56,34 +61,12 @@
     white-space: nowrap; 
     position: absolute;
     bottom: 120px; 
+    padding-left: .5rem;
 
 }
 
 
 @media (max-width: 1400px) {
-  .start-menu {
-      display: none;
-      position: absolute;
-      bottom: 100%; 
-      left: 0;
-      width: 12rem;
-      padding: 0.5rem;
-      z-index: 1000; 
-    }
-    
-  .start-menu li {
-      padding: 0.5rem;
-      font-size: 1.80rem;
-    }
-    .vertical-text {
-      color: white; 
-      font-family:Arial, Helvetica, sans-serif; 
-      font-size: 2rem; 
-      transform: rotate(-90deg); 
-      white-space: nowrap;
-      position: absolute;
-      bottom: 80px; 
-    
-    }
+
     
 }
