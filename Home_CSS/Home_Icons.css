@@ -1,5 +1,5 @@
-.Icon {
-  width: 75%;
+.icon {
+  width: 13rem;
   height: auto;
 
   text-align: center;
@@ -8,13 +8,13 @@
   align-items: center; 
 
 }
-.Icon img {
-  width: 75%; 
+.icon img {
+  width: 5.5rem; 
   height:auto;
   cursor: pointer;
   
 }
-.Icon h2 {
+.icon h2 {
   color: #fff; 
 
   font-family: 'W95FA', sans-serif; 
@@ -24,12 +24,64 @@
   width: fit-content;
   text-align: center; 
   margin: 0;
-
-  
 }
-.Icon p {
+
+.icon p {
   display: none;
 }
+
+
+
+
+
+
+#MyComputer{
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#E-Mail{
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#ReadMe {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#CProjects {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+#JavaProjects{
+  grid-column: 1;
+  grid-row: 4;
+}
+
+#HTMLProjects {
+  grid-column: 1;
+  grid-row: 5;
+}
+
+#JavaScript {
+  grid-column: 1;
+  grid-row: 6;
+}
+
+#WebApplications {
+  grid-column: 1;
+  grid-row: 7;
+}
+
+#RecycleBin {
+  grid-column: 9;
+  grid-row:7;
+
+
+}
+
 @media (max-width: 1400px) {
 
 }
