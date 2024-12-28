@@ -25,8 +25,6 @@
   padding-right: .5rem;
   margin-left: .25rem;
 
-
-
   background-color: #c0c0c0;
   border: 0.25rem solid #808080;
   border-top-color: #eaeaea;
@@ -34,12 +32,10 @@
 
   cursor: pointer;
 
-  font-family: 'W95FA', sans-serif;
   font-size: 2.75rem; 
   text-shadow: none;
 
 }
-
 #start-button:active, #start-button.clicked {
   background-color: #d0d0d0;
   border-top-color: #808080;
@@ -47,7 +43,6 @@
   border-right-color: #eaeaea;
   border-bottom-color: #eaeaea;
 }
-
 #start-button img {
   width: 3rem;
   height: auto; 
@@ -59,6 +54,13 @@
 #clock {
   display: flex;
   align-items: center;
+  padding-left: .5rem;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  margin-right: .125rem;
+  margin-left: .25rem;
+
+
 
   background-color: #c0c0c0;
   border: 0.25rem solid #808080;
@@ -66,60 +68,71 @@
   border-left-color: #808080;
   border-right-color: #eaeaea;
   border-bottom-color: #eaeaea;
-
-  padding-left: .5rem;
-  padding-right: .5rem;
-  margin-right: .125rem;
-  font-family: 'W95FA', sans-serif;
-  font-size: 2.5rem; 
-  color: #000000;
 }
+#clock span {
+  display: inline-block; 
+  width: 10rem; 
+  height: 2.5rem; 
+  line-height: 2.5rem;
+  overflow: hidden; 
+  font-size: 2rem; 
+
+}
+
 
 @media (max-width: 1400px) {
 
 }
 
-
-
-
-
-
-
-
 #taskContainer {
   display: flex;
-  align-items: center; /* Align items vertically within the container */
-  justify-content: flex-start; /* Align items to the left */
-  gap: 0.5rem; /* Add spacing between the taskbar entries */
-  height: 100%; /* Ensure it fills the height of the taskbar */
-  overflow-x: auto; /* Add horizontal scrolling if entries overflow */
-  padding-left: 0.25rem; /* Add padding to the container */
-  flex-wrap: nowrap; /* Prevent wrapping of taskbar entries */
-  box-sizing: border-box; /* Ensure padding is included in the element's dimensions */
-  flex-grow: 1; /* Allow taskContainer to grow and fill remaining space */
+  gap: 0.25rem; /* Adjust spacing between taskbar entries */
+  height: 100%; /* Match taskbar height */
+  padding-left: 0.25rem; /* Padding inside container */
+  box-sizing: border-box; /* Include padding in calculations */
+  flex-grow: 1; /* Fill remaining space between start button and clock */
+  overflow: hidden; /* Prevent overflow outside the container */
+
 }
-
-
 
 .taskbar-entry {
   display:none;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* Align content to the left */
+  height: 100%; /* Match the height of the taskContainer */
+  padding: 0 0.5rem; /* Horizontal padding for spacing inside */
+
+  font-size: 1.5rem; /* Slightly smaller font for more entries */
+  color: #000000;
+  cursor: pointer;
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Hide overflow content */
+  
+
+  flex: 1 0 auto; /* Entries can grow or shrink equally */
+  max-width: 12rem; /* Ensure a reasonable max width */
+  min-width: 6rem; /* Ensure a reasonable min width */
 
   background-color: #c0c0c0;
   border: 0.25rem solid #808080;
   border-top-color: #eaeaea;
   border-left-color: #eaeaea;
-
-  height: 100%; /* Match the height of the taskContainer */
-  padding: 0 0.75rem; /* Add horizontal padding for spacing */
-  font-family: 'W95FA', sans-serif;
-  font-size: 2.75rem; /* Match font size of the start button */
-  color: #000000;
-  cursor: pointer;
-  white-space: nowrap; /* Prevent text from wrapping */
+}
+/* Styling for icons inside taskbar entries */
+.taskbar-entry img {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem; /* Space between icon and label */
+  object-fit: contain; /* Ensure the image scales properly */
 }
 
+.taskbar-entry span {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
 /* Hover effect */
 .taskbar-entry:hover {
   background-color: #d0d0d0;
@@ -129,21 +142,12 @@
   border-bottom-color: #eaeaea;
 }
 
-/* Active state for when the taskbar entry is clicked */
-.taskbar-entry:active {
-  background-color: #d0d0d0;
-  border-top-color: #808080;
+/* Active state */
+.active-taskbar-entry {
+  background-color: #d0d0d0; /* Active state background */
+  border-top-color: #808080; /* Active state borders */
   border-left-color: #808080;
   border-right-color: #eaeaea;
   border-bottom-color: #eaeaea;
-
-  box-shadow: inset 0.125rem 0.125rem 0 #808080,
-              inset -0.125rem -0.125rem 0 #d0d0d0;
 }
 
-/* Optional styling for icons inside the entries */
-.taskbar-entry img {
-  width: 2rem; /* Adjust icon size */
-  height: auto;
-  margin-right: 0.5rem; /* Spacing between icon and text */
-}

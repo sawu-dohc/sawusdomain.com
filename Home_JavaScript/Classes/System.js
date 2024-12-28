@@ -1,377 +1,350 @@
 class System {
-    directory_array = [];
 
-    constructor() {}
+    root_directory;
 
-    addDirectory( new_directory ) {
-        this.directory_array.push(new_directory);
+    constructor() {
+        this.root_directory = new Directory(
+            "root",
+            "Root Directory",
+            "Root of the file system",
+            "Home_Assets/FileIcon.png",
+            [], // Initialize array_files
+            []  // Initialize array_directories
+        );
+    }
+    addDirectory(new_directory) {
+
+        this.root_directory.array_directories.push( new_directory );
+    }
+
+    addFile(new_file) {
+
+        this.root_directory.array_files.push(new_file);
+    }
+
+    initializeData(){
+
+//                               string_id      string_name                                     string_path                                                                    string_iconSrc                                        string_description
+        const file0  = new File( "file0"      , "My Computer"                                 , "/path/to/specs"                                                             , "Home_Assets/MyComputerIcon.png"                    , "Rig specs with links!"                                                                                                                       );
+        const file1  = new File( "file1"      , "Read Me"                                     , "/path/to/readme.txt"                                                        , "Home_Assets/TextFileIcon.png"                      , "Welcome message."                                                                                                                            );
+        const file2  = new File( "file2"      , "E-Mail"                                      , "mailto:example@example.com"                                                 , "Home_Assets/EmailIcon.png"                         , "Send me an email!"                                                                                                                           );
+        const file3  = new File( "file3"      , "C Projects"                                  , "/path/to/c_projects"                                                        , "Home_Assets/FileIcon.png"                          , "Link to my C projects on Git hub"                                                                                                            );
+        const file4  = new File( "file4"      , "Java Projects"                               , "/path/to/java_projects"                                                     , "Home_Assets/FileIcon.png"                          , "Link to my Java projects on Git hub"                                                                                                         );
+        const file5  = new File( "file5"      , "Wild Rescues"                                , "Sites/WildRescues/page1_index.html"                                         , "Home_Assets/InternetExplorerIcon.png"              , "Website that utilizes HTML, CSS, and a little bit of JavaScript. Has media query for mobile devices."                                        );
+        const file6  = new File( "file6"      , "Strike A Chord"                              , "Sites/StrikeAChord/page1_index.html"                                        , "Home_Assets/InternetExplorerIcon.png"              , "Website that utilizes HTML, CSS, and a little bit of JavaScript. Has media query for mobile devices."                                        );
+        const file7  = new File( "file7"      , "Online order form"                           , "Sites/FinalProject2/index.html"                                             , "Home_Assets/InternetExplorerIcon.png"              , "Simple page that uses JS to calculate totals from selected items."                                                                           );
+        const file8  = new File( "file8"      , "Using NASA API"                              , "Sites/SamsJSproject11/index.html"                                           , "Home_Assets/InternetExplorerIcon.png"              , "Webpage that uses NASA's API to show you a picture taken on a specified date."                                                               );
+        const file9  = new File( "file9"      , "Temperature converter"                       , "Sites/SamsJSproject2/index.html"                                            , "Home_Assets/InternetExplorerIcon.png"              , "Simple JS project that targets input fields and manipulates the values."                                                                     );
+        const file10 = new File( "file10"     , "Timed math quiz"                             , "Sites/SamsJSproject5/index.html"                                            , "Home_Assets/InternetExplorerIcon.png"              , "JS project that compares inputs with declared values and manipulates the HTML page to give the user feedback."                               );
+        const file11 = new File( "file11"     , "Input validation"                            , "Sites/SamsJSproject7/index.html"                                            , "Home_Assets/InternetExplorerIcon.png"              , "This script demonstrates how to use JS to restrict user inputs."                                                                             );
+        const file12 = new File( "file12"     , "Stopwatch"                                   , "Sites/SamsJSproject8/index.html"                                            , "Home_Assets/InternetExplorerIcon.png"              , "Webpage that uses NASA's API to show you a picture taken on a specified date."                                                               );
+        const file13 = new File( "file13"     , "Utilizing string query"                      , "Sites/SamsJSproject9/index.html"                                            , "Home_Assets/InternetExplorerIcon.png"              , "This page uses string query technique to pass data from one page to another."                                                                );
+        const file14 = new File( "file14"     , "Jigsaw puzzle"                               , "Sites/SamsJSproject10/index.html"                                           , "Home_Assets/InternetExplorerIcon.png"              , "Making elements draggable."                                                                                                                  );
+        const file15 = new File( "file15"     , "Fulton County Payroll Deduction Form"        , "Sites/FCGAFormProject/index.html"                                           , "Home_Assets/InternetExplorerIcon.png"              , "Digitizing an onboarding payroll deduction form."                                                                                            ); 
+        const file16 = new File( "file16"     , "GTC Hiring Partner Database.exe"             , "Sites/SamsJSproject13/HTML/page0_ViewLogin.html"                            , "Home_Assets/ApplicationIcon.png"                   , "Database application that uses PHP and JavaScript to manage an SQL database. Features session tracking and user permission functionality."   );
+        const file17 = new File( "file17"     , "GTC Hiring Partner Database Documentation"   , ""                                                                           , "Home_Assets/InternetExplorerIcon.png"              , "Link to a public google docs directory that contains documentation for my database application"                                              );
+        const file18 = new File( "file18"     , "GTC Welding department Inventory System"     , "Sites/InventoryDatabaseApp/HTML/page1_Home.html"                            , "Home_Assets/ApplicationIcon.png"                   , "Inventory database application (pls no bully, under construction)"                                                                           );
+        const file19 = new File( "file19"     , "Digital Broker"                              , "Sites/OnlineBroker/index.html"                                              , "Home_Assets/ApplicationIcon.png"                   , "Long term and short term divergence calculator, literally makes you rich!"                                                                   );
+
+
+
+//                                        string_id    string_name          string_description                                        string_iconSrc                         array_files    array_directories
+        const directory0 = new Directory( "directory0"     , "HTML Projects"    , "Static web pages with CSS and a little JavaScript"     , "Home_Assets/FileIcon.png"            , []           , []               );
+        const directory1 = new Directory( "directory1"     , "JavaScript"       , "HTML pages demonstrating JavaScript functionalities"   , "Home_Assets/FileIcon.png"            , []           , []               );
+        const directory2 = new Directory( "directory2"     , "Web Applications" , "HTML, CSS, JavaScript, PHP, and SQL database projects" , "Home_Assets/FileIcon.png"            , []           , []               );
+        const directory3 = new Directory( "directory3"     , "Recycle Bin"      , " "                                                     , "Home_Assets/RecycleBinEmptyIcon.png" , []           , []               );
+
+
+        // Associate files with individual directories
+        directory0.array_files.push(file5); // HTML Projects: Wild Rescues
+        directory0.array_files.push(file6); // HTML Projects: Strike A Chord
+
+        directory1.array_files.push(file0); // JavaScript: Online order form
+        directory1.array_files.push(file1); // JavaScript: Using NASA API
+        directory1.array_files.push(file2); // JavaScript: Temperature converter
+        directory1.array_files.push(file3); // JavaScript: Timed math quiz
+        directory1.array_files.push(file4); // JavaScript: Input validation
+
+        directory2.array_files.push(file11); // Web Applications: GTC Hiring Partner Database.exe
+        directory2.array_files.push(file12); // Web Applications: GTC Hiring Partner Database Documentation
+        directory2.array_files.push(file13); // Web Applications: GTC Inventory System
+        directory2.array_files.push(file14); // Web Applications: Digital Broker
+
+        // Add files to the root directory individually
+        this.root_directory.array_files.push(file0); // My Computer
+        this.root_directory.array_files.push(file1); // Read Me
+        this.root_directory.array_files.push(file2); // E-Mail
+        this.root_directory.array_files.push(file3); // C Projects
+        this.root_directory.array_files.push(file4); // Java Projects
+
+        // Add directories to the root directory individually
+        this.root_directory.array_directories.push(directory0); // HTML Projects
+        this.root_directory.array_directories.push(directory1); // JavaScript
+        this.root_directory.array_directories.push(directory2); // Web Applications
+        this.root_directory.array_directories.push(directory3); // Recycle Bin
+
+
     }
 
     createAllDirectoryIcons() {
+        const desktopDiv = document.getElementById("desktop"); // Get the desktop container
 
-        // Description
-        // This method creates this series of elements for each directory object and inserts it into the desktop div.
-        //
-        //  <div id="exampleIcon" class="Icon ">
-        //      <a href="https://example.com">
-        //          <img src="Home_Assets/textFile.png" alt="Example Title">
-        //      </a>
-        //      <h2>Example Title</h2>
-        //      <p>This is an example description.</p>
-        //  </div>
-        //
+        // Iterate through all directories under the root
+        for (let i = 0; i < this.root_directory.array_directories.length; i++) {
+            const directory = this.root_directory.array_directories[i];
 
-
-        const desktopDiv = document.getElementById("desktop");
-
-        for (let i = 0; i < this.directory_array.length; i++) {
-            const directory = this.directory_array[i];
-        
-            // Create the icon div
+            // Create an icon for the directory
             const iconDiv = document.createElement("div");
-            iconDiv.id = directory.name_string; 
+            iconDiv.id = directory.string_id + "_Icon";
             iconDiv.className = "icon";
-        
-            // Create the anchor element
+
             const linkElement = document.createElement("a");
-            linkElement.href = "#"; // Placeholder link
-        
-            // Create the image element
+
             const imgElement = document.createElement("img");
-            imgElement.src = directory.iconSrc_string;
-            imgElement.alt = directory.name_string;
-        
-            // Create the title (h2) element
+            imgElement.src = directory.string_iconSrc;
+            imgElement.alt = directory.string_name;
+
             const titleElement = document.createElement("h2");
-            titleElement.textContent = directory.name_string;
-        
-            // Create the description (p) element
+            titleElement.textContent = directory.string_name;
+
             const descriptionElement = document.createElement("p");
-            descriptionElement.textContent = directory.description_string;
-        
-            // Append elements together
+            descriptionElement.textContent = directory.string_description;
+
+            // Assemble the icon structure
             linkElement.appendChild(imgElement);
             iconDiv.appendChild(linkElement);
             iconDiv.appendChild(titleElement);
             iconDiv.appendChild(descriptionElement);
-        
+
             // Append the icon to the desktop
             desktopDiv.appendChild(iconDiv);
         }
     }
-    handleIconClick(event, icon) {
-        if (event.target.tagName === "IMG") {
-            const iconId = icon.id; // Get the ID of the clicked icon
-            console.log(`Clicked on icon: ${iconId}`); // For debugging purposes
-            this.createWindow(iconId); // Create a window for the clicked icon
-        }
-    }
-    addClickListenersToIcons() {
-
-        const iconsArray = document.querySelectorAll(".icon"); 
-    
-        for (let i = 0; i < iconsArray.length; i++) {
-
-            const icon = iconsArray[i]; 
-
-            icon.addEventListener("click", function (event) {
-
-                if (event.target.tagName === "IMG") {
-
-                    const windowDiv = document.getElementById(iconId);
-    
-                    windowDiv.style.display = "flex"; 
-                    
-                }
-            });
-        }
-    }
-    
-    
-
-
 
     createWindowsForAllDirectories() {
-
-        // Description
-        // This method creates these window divs inside the desktop div
-        //
-        //  <div id="genericWindow" class="window">
-        //      
-        //       <!-- Title bar -->  
-        //        <div class="title-bar">
-        //            <span class="title-bar-text">
-        //                <img id="window-icon" src="Home_Assets/defaultIcon.png"> 
-        //                Generic Window Title
-        //            </span>
-        //            <div class="title-bar-controls">
-        //                <button aria-label="Minimize">-</button> 
-        //                <button aria-label="Maximize">□</button> 
-        //                <button aria-label="Close" class="close-btn">x</button> 
-        //            </div>
-        //        </div>
-        //
-        //        <!-- Toolbar buttons -->
-        //        <div class="toolbar"> 
-        //            <button>File</button> 
-        //            <button>Edit</button>
-        //            <button>Search</button>
-        //            <button>Help</button>
-        //        </div>
-        //
-        //        <!-- Content of the window goes here -->
-        //        <div class="window-body">
-        //
-        //        </div>
-        //  </div>
-        //   
-
         const paneDiv = document.getElementById("pane");
 
-        for (let i = 0; i < this.directory_array.length; i++) {
-            const directory = this.directory_array[i];
-            console.log(`Creating window for directory: ${directory.name_string}`);
-            const windowDiv = this.createWindowContainer(directory);
-            paneDiv.appendChild(windowDiv);
-            console.log(`Window created for directory: ${directory.name_string}`);
-        }
-            
-    }
-    
-    createWindowContainer(directory) {
-            const windowDiv = document.createElement("div");
-            windowDiv.id = `${directory.name_string.replace(/\s+/g, "_")}Window`;
-            windowDiv.className = "window";
-            windowDiv.style.display = "none";
-        
-            const titleBar = this.createTitleBar(directory, windowDiv);
-            const toolbar = this.createToolbar();
-            const windowBody = this.createWindowBody(directory);
-        
-            windowDiv.appendChild(titleBar);
-            windowDiv.appendChild(toolbar);
-            windowDiv.appendChild(windowBody);
-        
-            return windowDiv;
-    }
-    
-    createTitleBar(directory, windowDiv) {
-            const titleBar = document.createElement("div");
-            titleBar.className = "title-bar";
-        
-            const titleBarText = document.createElement("span");
-            titleBarText.className = "title-bar-text";
-        
-            const iconImg = document.createElement("img");
-            iconImg.id = "window-icon";
-            iconImg.src = directory.iconSrc_string;
-            titleBarText.appendChild(iconImg);
-            titleBarText.append(` ${directory.name_string}`);
-        
-            const titleBarControls = this.createTitleBarControls(windowDiv);
-            titleBar.appendChild(titleBarText);
-            titleBar.appendChild(titleBarControls);
-        
-            return titleBar;
-    }
-    
-    createTitleBarControls(windowDiv) {
-            const titleBarControls = document.createElement("div");
-            titleBarControls.className = "title-bar-controls";
-        
-            const minimizeButton = this.createMinimizeButton(windowDiv);
-            const maximizeButton = this.createMaximizeButton(windowDiv);
-            const closeButton = this.createCloseButton(windowDiv);
-        
-            titleBarControls.appendChild(minimizeButton);
-            titleBarControls.appendChild(maximizeButton);
-            titleBarControls.appendChild(closeButton);
-        
-            return titleBarControls;
-    }
-    
-    createMinimizeButton(windowDiv) {
-            const minimizeButton = document.createElement("button");
-            minimizeButton.textContent = "-";
-            minimizeButton.className = "minimize-btn";
-            minimizeButton.addEventListener("click", () => {
-                windowDiv.style.display = "none";
-            });
-            return minimizeButton;
-    }
-    
-    createMaximizeButton(windowDiv) {
-            const maximizeButton = document.createElement("button");
-            maximizeButton.textContent = "□";
-            maximizeButton.className = "maximize-btn";
-        
-            let isMaximized = false;
-            let originalStyles = {};
-        
-            maximizeButton.addEventListener("click", () => {
-                const taskbar = document.getElementById("taskbar");
-                const taskbarHeight = taskbar ? taskbar.offsetHeight : 0;
-                const titleBarHeight = 30;
-                const toolbarHeight = 40;
-        
-                if (!isMaximized) {
-                    originalStyles = {
-                        width: windowDiv.style.width,
-                        height: windowDiv.style.height,
-                        top: windowDiv.style.top,
-                        left: windowDiv.style.left,
-                        transform: windowDiv.style.transform,
-                    };
-        
-                    windowDiv.style.width = "100%";
-                    windowDiv.style.height = `calc(100% - ${taskbarHeight}px)`;
-                    windowDiv.style.top = "0";
-                    windowDiv.style.left = "0";
-                    windowDiv.style.transform = "none";
-        
-                    const windowBody = windowDiv.querySelector(".window-body");
-                    if (windowBody) {
-                        windowBody.style.height = `calc(100% - ${titleBarHeight}px - ${toolbarHeight}px)`;
-                        windowBody.style.width = "100%";
-                    }
-        
-                    isMaximized = true;
-                } else {
-                    windowDiv.style.width = originalStyles.width;
-                    windowDiv.style.height = originalStyles.height;
-                    windowDiv.style.top = originalStyles.top;
-                    windowDiv.style.left = originalStyles.left;
-                    windowDiv.style.transform = originalStyles.transform;
-        
-                    const windowBody = windowDiv.querySelector(".window-body");
-                    if (windowBody) {
-                        windowBody.style.height = "";
-                        windowBody.style.width = "";
-                    }
-        
-                    isMaximized = false;
-                }
-            });
-        
-            return maximizeButton;
-    }
-    
-    createCloseButton(windowDiv) {
-        const closeButton = document.createElement("button");
-        closeButton.textContent = "x";
-        closeButton.className = "close-btn";
-    
-        closeButton.addEventListener("click", () => {
-            // Hide the window
-            windowDiv.style.display = "none";
-    
-            // Hide the corresponding taskbar entry
-            const taskbarEntryId = `${windowDiv.id.replace("Window", "TaskbarEntry")}`;
-            const taskbarEntry = document.getElementById(taskbarEntryId);
-            if (taskbarEntry) {
-                taskbarEntry.style.display = "none";
-            }
-    
-            console.log(`Hiding window: ${windowDiv.id} and taskbar entry: ${taskbarEntryId}`);
-        });
-    
-        return closeButton;
-    }
-    
-    
-    createToolbar() {
-            const toolbar = document.createElement("div");
-            toolbar.className = "toolbar";
-        
-            const fileButton = document.createElement("button");
-            fileButton.textContent = "File";
-            toolbar.appendChild(fileButton);
-        
-            const editButton = document.createElement("button");
-            editButton.textContent = "Edit";
-            toolbar.appendChild(editButton);
-        
-            const searchButton = document.createElement("button");
-            searchButton.textContent = "Search";
-            toolbar.appendChild(searchButton);
-        
-            const helpButton = document.createElement("button");
-            helpButton.textContent = "Help";
-            toolbar.appendChild(helpButton);
-        
-            return toolbar;
-    }
-    
-    createWindowBody(directory) {
-            const windowBody = document.createElement("div");
-            windowBody.className = "window-body";
-            windowBody.innerHTML = `<p>${directory.description_string}</p>`;
-            return windowBody;
-    }
-    
-    addClickListenersToIcons() {
-        const iconsArray = document.querySelectorAll(".icon");
-    
-        for (let i = 0; i < iconsArray.length; i++) {
-            const icon = iconsArray[i]; // Current icon in the loop
-    
-            icon.addEventListener("click", function (event) {
-                const iconId = icon.id; // Get the ID of the clicked icon
-                const windowId = `${iconId}Window`; // Derive the corresponding window ID
-                const taskbarEntryId = `${iconId}TaskbarEntry`; // Derive the corresponding taskbar-entry ID
-                const windowDiv = document.getElementById(windowId);
-                const taskbarEntry = document.getElementById(taskbarEntryId);
-    
-                // Only open the window if it is not already visible
-                if (windowDiv && (windowDiv.style.display === "none" || !windowDiv.style.display)) {
-                    windowDiv.style.display = "flex"; // Show the window
-                    if (taskbarEntry) {
-                        taskbarEntry.style.display = "flex"; // Show the taskbar entry
-                    }
-                    console.log(`Opening window: ${windowId} and making taskbar entry visible: ${taskbarEntryId}`);
-                }
-            });
+        // Iterate through all directories under the root
+        for (let i = 0; i < this.root_directory.array_directories.length; i++) {
+            const directory = this.root_directory.array_directories[i];
+
+            const new_window = new Window(directory); // Create a new window for the directory
+            paneDiv.appendChild(new_window.dom_htmlElement); // Append the window to the pane
         }
     }
-    
+
     createTaskbarEntriesForDirectories() {
         const taskbarDiv = document.getElementById("taskContainer");
-    
-        if (!taskbarDiv) {
-            console.error("Taskbar div not found!");
-            return;
-        }
-    
-        for (let i = 0; i < this.directory_array.length; i++) {
-            const directory = this.directory_array[i];
-    
+
+        // Iterate through all directories under the root
+        for (let i = 0; i < this.root_directory.array_directories.length; i++) {
+            const directory = this.root_directory.array_directories[i];
+
+            // Create the taskbar entry
             const taskbarEntry = document.createElement("div");
-            taskbarEntry.id = `${directory.name_string.replace(/\s+/g, "_")}TaskbarEntry`;
+            taskbarEntry.id = directory.string_id + "_TaskbarEntry";
             taskbarEntry.className = "taskbar-entry";
-            taskbarEntry.textContent = directory.name_string;
-    
+
+            const taskbarIcon = document.createElement("img");
+            taskbarIcon.src = directory.string_iconSrc;
+            taskbarIcon.alt = `${directory.string_name} icon`;
+            taskbarIcon.className = "taskbar-icon";
+
+            const taskbarText = document.createElement("span");
+            taskbarText.textContent = directory.string_name;
+
+            taskbarEntry.appendChild(taskbarIcon);
+            taskbarEntry.appendChild(taskbarText);
+
+            // Event listener to toggle window visibility
             taskbarEntry.addEventListener("click", () => {
-                const windowId = `${directory.name_string.replace(/\s+/g, "_")}Window`;
+                const windowId = directory.string_id + "_Window";
                 const windowDiv = document.getElementById(windowId);
-    
+
                 if (windowDiv) {
                     if (windowDiv.style.display === "none") {
-                        windowDiv.style.display = "flex"; // Show the window
+                        windowDiv.style.display = "flex";
+                        taskbarEntry.classList.add("clicked");
                     } else {
-                        windowDiv.style.display = "none"; // Hide the window
+                        windowDiv.style.display = "none";
+                        taskbarEntry.classList.remove("clicked");
                     }
                 }
             });
-    
+
+            // Append the taskbar entry to the taskbar container
             taskbarDiv.appendChild(taskbarEntry);
         }
     }
-    
-        
-        
-        
-        
 
+    addClickListenersToIcons() {
+        const iconsArray = document.querySelectorAll(".icon");
+
+        for (let i = 0; i < iconsArray.length; i++) {
+            const icon = iconsArray[i];
+
+            icon.addEventListener("click", (event) => {
+                const iconId = icon.id;
+                const windowId = iconId.replace("_Icon", "_Window");
+                const windowDiv = document.getElementById(windowId);
+
+                if (windowDiv) {
+                    windowDiv.style.display = "flex";
+                }
+            });
+        }
+    }
+    updateClock() {
+        const date_object = new Date();
+
+        let hours = date_object.getHours();
+        let minutes = date_object.getMinutes();
+        let seconds = date_object.getSeconds();
+
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+
+        if (hours > 12) {
+            hours -= 12;
+        } else if (hours === 0) {
+            hours = 12;
+        }
+
+        const hoursStr = hours < 10 ? '0' + hours : hours.toString();
+        const minutesStr = minutes < 10 ? '0' + minutes : minutes.toString();
+        const secondsStr = seconds < 10 ? '0' + seconds : seconds.toString();
+
+        const clockTime = `${hoursStr}:${minutesStr}:${secondsStr} ${ampm}`;
+        document.getElementById('clock-time').innerText = clockTime;
+    }
+
+    initializeClock() {
+        this.updateClock(); // Initial clock update
+        setInterval(this.updateClock, 1000); // Update every second
+    }
+
+    initializeTooltips() {
+        const tooltip = document.getElementById('tooltip');
+
+        if (!tooltip) {
+            console.error('Tooltip element not found');
+            return;
+        }
+
+        const desktop = document.getElementById('desktop');
+        if (!desktop) {
+            console.error('Desktop element not found');
+            return;
+        }
+
+        desktop.addEventListener('mouseover', function (event) {
+            const iconElement = event.target.closest('.icon');
+            if (iconElement) {
+                const tooltipTextElement = iconElement.querySelector('p');
+                if (tooltipTextElement && tooltipTextElement.innerText) {
+                    tooltip.innerText = tooltipTextElement.innerText;
+                    positionTooltip(iconElement);
+                    showTooltip();
+                } else {
+                    console.warn('Tooltip text not found for:', iconElement);
+                }
+            }
+        });
+
+        desktop.addEventListener('mouseout', function (event) {
+            const iconElement = event.target.closest('.icon');
+            if (iconElement) {
+                hideTooltip();
+            }
+        });
+
+        function positionTooltip(element) {
+            const rect = element.getBoundingClientRect();
+            const tooltipRect = tooltip.getBoundingClientRect();
+            let top = rect.top + window.scrollY;
+            let left = rect.left + window.scrollX;
+
+            if (left + tooltipRect.width > window.innerWidth) {
+                left = rect.left - tooltipRect.width - 10;
+            } else {
+                left = rect.left + 100;
+            }
+
+            if (top + tooltipRect.height > window.innerHeight) {
+                top = window.innerHeight - tooltipRect.height - 10;
+            }
+
+            tooltip.style.top = top + "px";
+            tooltip.style.left = (left + 50) + "px";
+        }
+
+        function showTooltip() {
+            tooltip.style.visibility = 'visible';
+            tooltip.style.opacity = '1';
+        }
+
+        function hideTooltip() {
+            tooltip.style.visibility = 'hidden';
+            tooltip.style.opacity = '0';
+        }
+    }
+
+    initializeStartMenu() {
+        const startButton = document.getElementById("start-button");
+        const startMenu = document.getElementById("start-menu");
+      
+        if (!startButton || !startMenu) {
+          console.error("Start button or start menu element not found.");
+          return;
+        }
+      
+        startButton.addEventListener("click", () => {
+            const isVisible = startMenu.style.display === "flex";
+            startMenu.style.display = isVisible ? "none" : "flex"; // Toggle between none and flex
+        });
+
+      
+        // Close the menu if clicking outside it
+        document.addEventListener("click", (event) => {
+          if (!startMenu.contains(event.target) && !startButton.contains(event.target)) {
+            startMenu.style.display = "none";
+            startButton.classList.remove("clicked");
+          }
+        });
+    }
+
+    populateElement( targetElement, directory ) {
+
+        // Add directories to the target element
+        for (let i = 0; i < directory.array_directories.length; i++) {
+            const subDirectory = directory.array_directories[i];
+    
+            // Create and append the directory icon
+            const icon = new Icon(subDirectory.string_id,subDirectory.string_name,"",subDirectory.string_iconSrc,subDirectory.string_description);
+            subDirectory.dom_icon = icon.dom_htmlElement; // Associate the created icon
+            targetElement.appendChild(subDirectory.dom_icon);
+    
+            // Create a taskbar entry if applicable
+            const task = new Task(subDirectory, taskContainer);
+            subDirectory.dom_task = task.dom_htmlElement; // Associate the task
+    
+            // Create a window for the directory
+            const window = new Window(subDirectory, document.getElementById("pane"));
+            subDirectory.dom_window = window.dom_htmlElement; // Associate the window
+        }
+    
+        // Add files to the target element
+        for (let i = 0; i < directory.array_files.length; i++) {
+
+            const file = directory.array_files[i];
+    
+            // Create and append the file icon directly
+            const icon = new Icon(file.string_id,file.string_name,file.string_path,file.string_iconSrc,file.string_description);
+            file.dom_icon = icon.dom_htmlElement; // Associate the created icon
+            targetElement.appendChild(file.dom_icon);
+        }
+    }
+    
 
 
 }
+

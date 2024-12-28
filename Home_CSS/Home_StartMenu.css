@@ -11,7 +11,7 @@
     bottom: 100%; 
     left: 0;
     background-color: #c0c0c0;
-    border: .125rem solid #808080;
+    border: .25rem solid #808080;
     border-top-color: #ffffff;
     border-left-color: #ffffff;
     width: 30rem;
@@ -28,7 +28,6 @@
 
 .start-menu li {
   padding: 1rem;
-  font-family: 'W95FA', sans-serif;
   font-size: 2rem;
   cursor: pointer;
 

@@ -1,6 +1,5 @@
-@font-face {
-  font-family: 'W95FA';
-  src: url('/Home_Assets/W95FA.otf') format('opentype');
+html {
+  font-family: 'W95FA', sans-serif; /* Apply font globally */
 }
 
 body {
@@ -8,28 +7,13 @@ body {
 
   width: 100%;
   height: 100vh;
-
-  margin: 0;
-  padding: 0;
-
-
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
 }
 main {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+
   height: calc(100vh - 4rem); 
   overflow: hidden;
-  padding: 0;
-  margin: 0;
   box-sizing: border-box;
 }
-
-
-
 
 
 

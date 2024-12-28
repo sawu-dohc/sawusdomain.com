@@ -10,9 +10,7 @@
 
     color: #000000;
     padding: 8px 10px; 
-    border-radius: 4px; 
 
-    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
     font-size: 2rem; 
     font-family: 'W95FA', sans-serif;
 }

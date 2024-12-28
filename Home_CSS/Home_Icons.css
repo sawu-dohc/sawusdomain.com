@@ -17,7 +17,6 @@
 .icon h2 {
   color: #fff; 
 
-  font-family: 'W95FA', sans-serif; 
   font-size: 1.75rem;
   font-weight: 100;
 
@@ -35,51 +34,41 @@
 
 
 
-#MyComputer{
+#file0_icon {/* my computer  */
   grid-column: 1;
   grid-row: 1;
 }
-
-#E-Mail{
-  grid-column: 2;
-  grid-row: 1;
-}
-
-#ReadMe {
+#file1_icon {/* read me */
   grid-column: 1;
   grid-row: 2;
 }
-
-#CProjects {
+#file3_icon { /* c projects */
   grid-column: 1;
   grid-row: 3;
 }
-
-#JavaProjects{
+#file4_icon { /* java projects */
   grid-column: 1;
   grid-row: 4;
 }
-
-#HTMLProjects {
+#directory0_icon { /* html projects */
   grid-column: 1;
   grid-row: 5;
 }
-
-#JavaScript {
+#directory1_icon { /* javascript */
   grid-column: 1;
   grid-row: 6;
 }
-
-#WebApplications {
+#directory2_icon { /* web applications  */
   grid-column: 1;
   grid-row: 7;
 }
-
-#RecycleBin {
+#file2_icon { /* email */
+  grid-column: 2;
+  grid-row: 1;
+}
+#directory3_icon { /* recycle bin */
   grid-column: 9;
-  grid-row:7;
-
-
+  grid-row: 7;
 }
 
 @media (max-width: 1400px) {
