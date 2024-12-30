@@ -16,17 +16,23 @@
    <section class="content">
 
       <div class="description">
-         <p>This web application allows you to view the Astronomy Picture of the Day (APOD) provided by NASA. Simply select a date, and the application will fetch the image and its description using NASA's APOD API.</p>
+         <p>This web application allows you to view the Astronomy Picture of the Day (APOD) provided by NASA. Select a date and the application will fetch the image and its description using NASA's API.</p>
          <p>The application makes an HTTP GET request to the APOD API endpoint with the selected date as a parameter. The API responds with JSON data containing the image URL, title, and explanation. This data is then dynamically displayed on the page.</p>
       </div>
       
       <div class="date-picker">
          <label for="dateBox">Select a Date:</label>
          <input type="date" id="dateBox">
+         <button id="getButton">Get</button>
       </div>
 
-      <div id="nasaImage" alt="Image placeholder for NASA's Astronomy Picture of the Day."></div>
-      <p id="imageDescription"></p>
+      <div id="nasaImage">
+
+      </div>
+      
+      <p id="imageDescription">
+
+      </p>
    </section>
 
    <script src="script.js"></script>

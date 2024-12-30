@@ -1,0 +1,54 @@
+#NASAapi_Window .window-body {
+    padding: 2rem;
+    color: #333;
+    background:#d0d0d0; 
+    border: none;
+    align-items: center;
+}
+
+
+#NASAapi_Window .date-picker {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+
+#NASAapi_Window .date-picker button {
+    background-color: #c0c0c0; 
+    cursor: pointer;
+    border: 0.25rem solid #808080; 
+    border-top-color: #ffffff;
+    border-left-color: #ffffff; 
+    border-right-color: #808080; 
+    border-bottom-color: #808080;
+    margin:1rem;
+}
+
+#NASAapi_Window .date-picker button:active {
+    background-color: #d0d0d0; 
+    border-top-color: #808080; 
+    border-left-color: #808080;
+    border-right-color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+
+#warning {
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(255, 0, 0);
+
+}
+
+#dataContainer {
+    display:block;
+    text-align: center;
+    justify-content: center; 
+    align-items: center; 
+}
+
+#dataContainer img {
+    width: 50%;
+    padding: 1rem;
+}

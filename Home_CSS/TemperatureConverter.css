@@ -1,0 +1,38 @@
+.temperature-converter {
+    display: flex;
+    flex-direction: column; /* Stack elements in a single column */
+    align-items: center; /* Center elements horizontally */
+    gap: 10px; /* Add spacing between elements */
+
+}
+
+.temperature-converter label {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.temperature-converter input {
+    width: 150px;
+    padding: 5px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.arrow {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Target the window-body of the TemperatureConverter_Window */
+#TemperatureConverter_Window .window-body {
+    align-items: center;
+    flex-direction: column; 
+    background-color: #d0d0d0;
+    color: rgb(0, 0, 0); /* Ensure text remains readable */
+    padding: 15px; /* Increased padding for better spacing */
+    font-family: Arial, sans-serif;
+    border:none;
+
+}
+

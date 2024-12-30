@@ -13,9 +13,9 @@
   min-height: 2rem;
   width: 100%;
   box-sizing: border-box;
-  position: fixed; /* Keep the taskbar fixed at the bottom */
-  bottom: 0; /* Align to the bottom of the viewport */
-  padding: 0.12rem; /* Add some padding to the sides */
+  position: fixed;
+  bottom: 0; 
+  padding: 0.12rem; 
 }
 
 #start-button {
@@ -86,44 +86,44 @@
 
 #taskContainer {
   display: flex;
-  gap: 0.25rem; /* Adjust spacing between taskbar entries */
-  height: 100%; /* Match taskbar height */
-  padding-left: 0.25rem; /* Padding inside container */
-  box-sizing: border-box; /* Include padding in calculations */
-  flex-grow: 1; /* Fill remaining space between start button and clock */
-  overflow: hidden; /* Prevent overflow outside the container */
+  gap: 0.25rem;
+  height: 100%; 
+  padding-left: 0.25rem;
+  box-sizing: border-box; 
+  flex-grow: 1; 
+  overflow: hidden;
 
 }
 
 .taskbar-entry {
   display:none;
   align-items: center;
-  justify-content: flex-start; /* Align content to the left */
-  height: 100%; /* Match the height of the taskContainer */
-  padding: 0 0.5rem; /* Horizontal padding for spacing inside */
+  justify-content: flex-start; 
+  height: 100%; 
+  padding: 0 0.5rem; 
 
-  font-size: 1.5rem; /* Slightly smaller font for more entries */
+  font-size: 1.5rem; 
   color: #000000;
   cursor: pointer;
-  white-space: nowrap; /* Prevent text wrapping */
-  overflow: hidden; /* Hide overflow content */
+  white-space: nowrap; 
+  overflow: hidden; 
   
 
-  flex: 1 0 auto; /* Entries can grow or shrink equally */
-  max-width: 12rem; /* Ensure a reasonable max width */
-  min-width: 6rem; /* Ensure a reasonable min width */
+  flex: 1 0 auto; 
+  max-width: 12rem; 
+  min-width: 6rem; 
 
   background-color: #c0c0c0;
   border: 0.25rem solid #808080;
   border-top-color: #eaeaea;
   border-left-color: #eaeaea;
 }
-/* Styling for icons inside taskbar entries */
+
 .taskbar-entry img {
   width: 2rem;
   height: 2rem;
-  margin-right: 0.5rem; /* Space between icon and label */
-  object-fit: contain; /* Ensure the image scales properly */
+  margin-right: 0.5rem; 
+  object-fit: contain; 
 }
 
 .taskbar-entry span {
@@ -133,7 +133,8 @@
   text-overflow: ellipsis;
   max-width: 100%;
 }
-/* Hover effect */
+
+
 .taskbar-entry:hover {
   background-color: #d0d0d0;
   border-top-color: #808080;
@@ -142,10 +143,9 @@
   border-bottom-color: #eaeaea;
 }
 
-/* Active state */
 .active-taskbar-entry {
-  background-color: #d0d0d0; /* Active state background */
-  border-top-color: #808080; /* Active state borders */
+  background-color: #d0d0d0;
+  border-top-color: #808080;
   border-left-color: #808080;
   border-right-color: #eaeaea;
   border-bottom-color: #eaeaea;

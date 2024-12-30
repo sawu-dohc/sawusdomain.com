@@ -1,10 +1,8 @@
 #desktop {
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(7, 1fr);
-
-  height: 100%;
-
+  grid-template-columns: repeat(10, 1fr); /* 9 columns */
+  grid-template-rows: repeat(5, 1fr); /* 7 rows */
+  grid-auto-flow: column; /* Populate grid cells vertically, then move to the next column */
+  margin: 0;
   padding: 1.5rem;
-
 }

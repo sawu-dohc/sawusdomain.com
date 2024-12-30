@@ -1,7 +1,6 @@
 
 * {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -15,7 +14,6 @@
     border-top-color: #ffffff;
     border-left-color: #ffffff;
     width: 30rem;
-    padding: 0.5rem;
     z-index: 1000; 
 }
   
@@ -43,6 +41,10 @@
 
 
 
+
+
+
+
 .start-menu-bar {
     background-color: #888888; 
     width: 4rem; 
@@ -59,7 +61,7 @@
     transform: rotate(-90deg); 
     white-space: nowrap; 
     position: absolute;
-    bottom: 120px; 
+    bottom: 150px; 
     padding-left: .5rem;
 
 }
@@ -69,3 +71,64 @@
 
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.submenu {
+  display: none;
+  position: absolute; /* Allow dynamic positioning */
+  background-color: #c0c0c0;
+  border: 0.25rem solid #808080;
+  border-top-color: #ffffff;
+  border-left-color: #ffffff;
+  z-index: 1000;
+  width: 15rem; /* Fixed width for testing */
+  box-sizing: border-box;
+}
+
+
+/* Hover effect on the entire li */
+#start-menu .submenu li:hover {
+background-color: #0b26b2; /* Match hover background color */
+}
+
+#start-menu .submenu li:hover a {
+color: white; /* Change text color to white on hover */
+}
+
+/* Style links in the submenu */
+.submenu a {
+text-decoration: none; /* Remove underline */
+display: block; /* Ensure the entire area is clickable */
+font-size: 2rem;
+color: black; /* Default color for links */
+}
+
+
+
+
+
+

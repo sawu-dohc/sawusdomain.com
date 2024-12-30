@@ -1,17 +1,17 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 2%;
+
     
     /* For 96 PPI (Screen Resolution) */
     width: 8.5in; /* or 210mm for A4 */
     height: 11in; /* or 297mm for A4 */
-    margin: 0px;
+
     
     /* For 300 PPI (High-Resolution Print)
     max-width: 2550px; 
     max-height: 3300px; */
     
-    padding: 40px;
+    padding: 5rem;
     border: 3px solid black;
     font-size: 15px;
 

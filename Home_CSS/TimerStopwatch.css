@@ -1,0 +1,45 @@
+
+#stopwatch-container, #timer-container {
+    margin: 1rem auto;
+    text-align: center;
+
+}
+
+#stopwatch-display, #timer-display {
+    font-size: 1.5rem;
+    margin: 0.5rem auto;
+    color: #000; 
+    width: fit-content;
+}
+#TimerStopwatch_Window .window-body button {
+    cursor: pointer;
+    background-color: #c0c0c0;
+    border: 0.25rem solid #808080;
+    border-top-color: #eaeaea;
+    border-left-color: #eaeaea;
+    width: 8rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+button:active {
+    background-color: #d0d0d0;
+    border-top-color: #808080;
+    border-left-color: #808080;
+    border-right-color: #eaeaea;
+    border-bottom-color: #eaeaea;
+}
+
+#timer-container input {
+    width: 6rem;
+    margin: 0.5rem;
+    padding: 0.25rem;
+    background-color: #fff;
+    border: 0.2rem solid #808080;
+    border-top-color: #eaeaea;
+    border-left-color: #eaeaea;
+}
+#TimerStopwatch_Window .window-body{
+    background-color: #d0d0d0;
+    border: none;
+}

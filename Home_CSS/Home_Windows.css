@@ -1,14 +1,15 @@
 .window {
-  display: none;
+  
   position: absolute;
 
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
-  box-sizing: border-box;
   padding: .125rem;
   flex-direction: column; 
+  
+
 
   background-color: #d0d0d0;
   border: .25rem solid #808080;
@@ -17,7 +18,7 @@
 }
 .window-body {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   padding: 1rem;
 
   box-sizing: border-box;
@@ -25,6 +26,7 @@
   height: 100%; /* Allow it to fill the available height */
   font-size: 1rem;
   overflow: auto;
+  
 
   background-color: #ffffff;
   border: .25rem solid;
@@ -34,17 +36,19 @@
   border-bottom-color: #eaeaea;
 }
 .window.maximized {
-  width: 100vw; /* Full viewport width */
+  width: 100vw; 
   height: calc(100vh - 4.5rem); /* Subtract taskbar height (adjust 4.5rem as per your taskbar height) */
   position: fixed; /* Fixed position relative to viewport */
   z-index: 10; /* Ensure it appears above other elements */
 }
 
 
-.title-bar-icon {
-  width: 1.75rem;
+.title-bar img {
+  width: auto;
+  height: 2rem;
+  
   padding-left: .125em;
-  padding-top: .125em;
+
 }
 .title-bar {
   display: flex;
@@ -54,9 +58,14 @@
   padding: .25rem;
 
 }
-.title-bar-text {
+.title-bar span{
   font-family: 'W95FA', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+  text-align: left;
+  padding-right: 1rem;
+  padding-left: .5rem;
+  
+  
 }
 
 .title-bar-controls {
@@ -70,9 +79,14 @@
   width: 1.75rem;
   height: 1.75rem;
   font-family: 'W95FA', sans-serif;
-  color: black;
-  font-size: 1.5rem; /* Adjust font size for symbols */
+  font-size: 1.25rem; /* Adjust font size for symbols */
+  font-weight:bold;
   margin:.124rem;
+
+  display: flex; /* Use flexbox for the button content */
+  justify-content: center; /* Center icon horizontally */
+  align-items: center; /* Center icon vertically */
+
 }
 .title-bar-controls button:active {
   background-color: #d0d0d0;
@@ -86,7 +100,6 @@
   display: flex;
   background-color: #d0d0d0;
   padding: .20em;
-
   box-sizing: border-box;
 }
 .toolbar button {
@@ -95,7 +108,7 @@
   padding-left: .5em;
   padding-right: .5em;
   font-family: 'W95FA', sans-serif;
-  font-size: 1.5\rem;
+  font-size: 1.5rem;
   cursor: pointer;
   color: black;
 }

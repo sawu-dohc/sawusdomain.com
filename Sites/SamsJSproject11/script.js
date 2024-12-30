@@ -1,50 +1,34 @@
-"use strict";
+const imageBox = document.getElementById("nasaImage");
+const dateBox = document.getElementById("dateBox");
+const getButton = document.getElementById("getButton");
+const apiKey = 'OBucfKBJ8Cvj8YUy1hd1h089azgMdsU6eIaIA3uQ';
 
-let imageBox = document.getElementById("nasaImage");
-let dateBox = document.getElementById("dateBox");
+getButton.addEventListener("click", async function () {
+   try {
+      const selectedDate = dateBox.value;
 
-let apiKey = 'OBucfKBJ8Cvj8YUy1hd1h089azgMdsU6eIaIA3uQ';
+      console.log('Date selected:', selectedDate);
 
-dateBox.onchange = function() {
-    console.log( 'Date changed:', dateBox.value );  
-    
-    let apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${dateBox.value}`;
+      const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${selectedDate}`;
+      console.log('API URL:', apiUrl);
 
-    console.log('API URL:', apiUrl);
-    
-    fetch(apiUrl)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Error fetching APOD data");
-        }
-        return response.json();
-    })
-    .then(data => {
-        showPicture(data); 
-    })
-    .catch(error => {
-        console.error('Error fetching APOD:', error);
-    });
-};
+      const response = await fetch(apiUrl);
 
-function showPicture( json ) {
-    let content = ""; 
+      if (!response.ok) {
+         throw new Error("Error fetching APOD data");
+      }
 
-    if ( json.media_type === "video" ) {
-        // template literals for dynamic values
-        content = `<iframe src="${json.url}"></iframe>
-                   <h1>${json.title}</h1>
-                   <p>${json.explanation}</p>`;
-    } 
-    else if ( json.media_type === "image" ) {
+      const data = await response.json();
+      showPicture(data);
+   } 
+   catch (error) {
+      console.error('Error fetching APOD:', error);
+      alert("An error occurred while fetching the APOD data. Please try again.");
+   }
+});
 
-        content = `<img src="${json.url}" alt="${json.title}" />
-                   <h1>${json.title}</h1>
-                   <p>${json.explanation}</p>`;
-    } 
-    else {
-        content = "image not Available";
-    }
-
-    document.getElementById("nasaImage").innerHTML = content;
+function showPicture(data) {
+   // Display the image and description
+   imageBox.innerHTML = `<img src="${data.url}" alt="${data.title}" />`;
+   document.getElementById("imageDescription").textContent = data.explanation;
 }

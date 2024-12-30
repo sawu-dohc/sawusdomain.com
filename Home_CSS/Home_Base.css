@@ -18,4 +18,12 @@ main {
 
 
 
+/* Responsive adjustments for submenu */
+@media (max-width: 0px) {
+}
+
+.input-row {
+  justify-content: space-between;
+  padding:1rem;
+}
 
