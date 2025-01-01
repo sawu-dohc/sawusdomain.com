@@ -1,56 +1,51 @@
 <?php
-// Include necessary functions (if needed)
+// Display errors for debugging
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-// Function to fetch crypto names from the database
-function getCryptoNames() {
-    $query = "SELECT DISTINCT name FROM crypto_data;";
-    return executeQuery($query); // Use your existing query execution function
+
+// Database connection details
+$servername = "localhost";
+$username = "samwu1_broker_db";
+$password = "f700f700";
+$dbname = "samwu1_broker_db";
+
+// Function to connect to the database
+function connectDatabase($servername, $username, $password, $dbname) {
+    $connection = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }
+
+    return $connection;
 }
 
-// Function to fetch midnight price data from CoinGecko
-function fetchMidnightPrice($currencyName) {
-    $now = new DateTime("now", new DateTimeZone("UTC"));
-    $now->setTime(0, 0, 0); // Set to midnight UTC
+// Function to insert test data into the database
+function insertTestData($connection) {
+    // Define test values
+    $name = 'TestName';
+    $timestamp = date('Y-m-d H:i:s');
+    $price = rand(100, 1000); // Generate a random price between 100 and 1000
 
-    $fromTimestamp = $now->getTimestamp(); // Midnight timestamp
-    $toTimestamp = $fromTimestamp + 3600; // One hour after midnight
-
-    $url = "https://api.coingecko.com/api/v3/coins/{$currencyName}/market_chart/range?vs_currency=usd&from={$fromTimestamp}&to={$toTimestamp}";
-    
-    $response = file_get_contents($url); // Fetch data from CoinGecko
-    $data = json_decode($response, true);
-
-    // Return the first price entry
-    return [
-        'timestamp' => date("Y-m-d H:i:s", $data['prices'][0][0] / 1000), // Convert milliseconds to seconds
-        'price' => $data['prices'][0][1]
-    ];
-}
-
-// Function to insert data into the database
-function insertPriceData($currencyName, $timestamp, $price) {
+    // SQL query to insert test values
     $query = "
         INSERT INTO crypto_data (name, timestamp, price)
-        VALUES ('{$currencyName}', '{$timestamp}', {$price});
+        VALUES ('$name', '$timestamp', $price);
     ";
-    executeQuery($query); // Use your existing query execution function
+
+    if ($connection->query($query) === TRUE) {
+        echo "Test data inserted successfully: $name, $timestamp, $price\n";
+    } else {
+        echo "Error inserting test data: " . $connection->error . "\n";
+    }
 }
 
-// Main process
-$cryptoNames = getCryptoNames(); // Fetch distinct crypto names
+// Main execution
+$connection = connectDatabase($servername, $username, $password, $dbname);
+insertTestData($connection);
+$connection->close();
 
-foreach ($cryptoNames as $crypto) {
-    $currencyName = $crypto['name']; // Get currency name from the result
-    $priceData = fetchMidnightPrice($currencyName); // Fetch midnight price data
-
-    // Insert the price data into the database
-    insertPriceData($currencyName, $priceData['timestamp'], $priceData['price']);
-
-    // Wait 1 minute to avoid hitting API limits
-    sleep(60);
-}
-
-echo "Maintenance script executed successfully.";
+echo "Maintenance script executed successfully.\n";
 ?>

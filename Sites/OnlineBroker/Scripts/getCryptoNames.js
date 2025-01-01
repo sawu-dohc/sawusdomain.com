@@ -12,7 +12,7 @@ async function getCryptoNames(){
 
         }
          
-        return tempArray;
+        return tempArray;4
 
     } 
     catch ( error ) {
