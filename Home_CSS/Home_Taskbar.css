@@ -151,3 +151,9 @@
   border-bottom-color: #eaeaea;
 }
 
+@media (max-width: 1080px) {
+  #taskbar,
+  #start-menu {
+    display: none; /* Hide taskbar and start menu */
+  }
+}

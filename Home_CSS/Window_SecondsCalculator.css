@@ -1,6 +1,5 @@
-
-#calculateButton {
-  font-family: 'W95FA', sans-serif; /* Match Windows 95 font */
+#TimeConverter_Window #calculateButton {
+  font-family: 'W95FA', sans-serif;
   cursor: pointer;
   background-color: #c0c0c0;
   border: 0.25rem solid #808080;
@@ -10,37 +9,38 @@
   margin: 1rem;
 }
 
-#calculateButton:active {
+#TimeConverter_Window #calculateButton:active {
   background-color: #d0d0d0;
   border-top-color: #808080;
   border-left-color: #808080;
   border-right-color: #eaeaea;
   border-bottom-color: #eaeaea;
-
 }
 
 #TimeConverter_Window .window-body {
   background-color: #d0d0d0;
-  border:none;
+  border: none;
   align-items: center;
   justify-content: center;
-  align-items: center;
 }
+
 #TimeConverter_Window input {
   width: 7rem;
 }
 
-#result {
+#TimeConverter_Window #result {
   margin-top: 1rem;
   font-weight: bold;
 }
-#alertBox {
-  color: #cc0000; /* Darker red for text */
+
+#TimeConverter_Window #alertBox {
+  color: #cc0000;
   font-weight: bold;
   font-size: 1rem;
   text-align: center;
   padding: 1rem;
 }
-#TimeConverter_Window p{
+
+#TimeConverter_Window p {
   text-align: justify;
 }

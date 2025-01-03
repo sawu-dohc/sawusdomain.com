@@ -1,5 +1,16 @@
-html {
-  font-family: 'W95FA', sans-serif; /* Apply font globally */
+@font-face {
+  font-family: 'W95FA';
+  src: url('../Home_Assets/W95FA.otf'); 
+}
+
+
+html,body {
+  font-family: 'W95FA'; /* Apply font globally */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -15,15 +26,18 @@ main {
   box-sizing: border-box;
 }
 
-
-
-
-/* Responsive adjustments for submenu */
-@media (max-width: 0px) {
+#vc {
+  color: rgb(0, 128, 128);
+  display: none;
 }
 
-.input-row {
-  justify-content: space-between;
-  padding:1rem;
+
+
+@media (max-width: 1080px) {
+  html, body {
+    font-family: 'W95FA';
+  }
 }
+
+
 

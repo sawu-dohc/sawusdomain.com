@@ -1,30 +1,64 @@
 function updateClock() {
     const date_object = new Date();
 
-    let hours = date_object.getHours();
-    let minutes = date_object.getMinutes();
-    let seconds = date_object.getSeconds();
+    let int_hours = date_object.getHours();
+    let int_minutes = date_object.getMinutes();
+    let int_seconds = date_object.getSeconds();
 
-    const ampm = hours >= 12 ? 'PM' : 'AM';
+    let string_ampm;
 
-    if (hours > 12) {
-        hours -= 12;
-    } else if (hours === 0) {
-        hours = 12;
+    let string_hours;
+    let string_minutes;
+    let string_seconds;
+
+    // Determine AM/PM
+    if (int_hours >= 12) {
+        string_ampm = 'PM';
+    } 
+    else {
+        string_ampm = 'AM';
     }
 
-    const hoursStr = hours < 10 ? '0' + hours : hours.toString();
-    const minutesStr = minutes < 10 ? '0' + minutes : minutes.toString();
-    const secondsStr = seconds < 10 ? '0' + seconds : seconds.toString();
+    // Convert hours to 12-hour format
+    if (int_hours > 12) {
+        int_hours -= 12;
+    } 
+    else if (int_hours === 0) {
+        int_hours = 12;
+    }
 
-    const clockTime = `${hoursStr}:${minutesStr}:${secondsStr} ${ampm}`;
-    document.getElementById('clock-time').innerText = clockTime;
+    // Format hours as a string
+    if (int_hours < 10) {
+        string_hours = '0' + int_hours;
+    } 
+    else {
+        string_hours = int_hours.toString();
+    }
+
+    // Format minutes as a string
+    if (int_minutes < 10) {
+        string_minutes = '0' + int_minutes;
+    } 
+    else {
+        string_minutes = int_minutes.toString();
+    }
+
+    // Format seconds as a string
+    if (int_seconds < 10) {
+        string_seconds = '0' + int_seconds;
+    } 
+    else {
+        string_seconds = int_seconds.toString();
+    }
+
+    // Construct clock time string and update DOM
+    const string_clockTime = `${string_hours}:${string_minutes}:${string_seconds} ${string_ampm}`;
+    document.getElementById('clock-time').innerText = string_clockTime;
 }
 
 function initializeClock() {
-    updateClock(); // Initial clock update
-    setInterval(updateClock, 1000); // Update every second
+    updateClock(); 
+    setInterval(updateClock, 1000); 
 }
 
-// Automatically run initializeClock when the page loads
 document.addEventListener('DOMContentLoaded', initializeClock);

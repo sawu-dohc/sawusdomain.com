@@ -9,25 +9,21 @@
   padding: .125rem;
   flex-direction: column; 
   
-
-
   background-color: #d0d0d0;
   border: .25rem solid #808080;
   border-top-color: #ffffff;
   border-left-color: #ffffff;
 }
+
 .window-body {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-
   box-sizing: border-box;
   width: 100%; /* Ensure it spans the full width of the parent window */
   height: 100%; /* Allow it to fill the available height */
   font-size: 1rem;
   overflow: auto;
-  
-
   background-color: #ffffff;
   border: .25rem solid;
   border-top-color: #808080;
@@ -35,6 +31,7 @@
   border-right-color: #eaeaea;
   border-bottom-color: #eaeaea;
 }
+
 .window.maximized {
   width: 100vw; 
   height: calc(100vh - 4.5rem); /* Subtract taskbar height (adjust 4.5rem as per your taskbar height) */
@@ -42,14 +39,12 @@
   z-index: 10; /* Ensure it appears above other elements */
 }
 
-
 .title-bar img {
   width: auto;
   height: 2rem;
-  
   padding-left: .125em;
-
 }
+
 .title-bar {
   display: flex;
   justify-content: space-between;
@@ -119,5 +114,20 @@
 
 
 @media (max-width: 1400px) {
+  .window {
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    position: fixed; /* Fixed position relative to viewport */
+    top: 0; /* Remove transform */
+    left: 0; /* Remove transform */
+    transform: none; /* No need for centering via translate */
+    z-index: 10; /* Ensure it appears above other elements */
+    padding: 0; /* Remove extra padding for full-screen effect */
+  }
 
+  .window-body {
+    padding: 1rem; /* Maintain consistent padding for content */
+    box-sizing: border-box;
+    overflow-y: auto; /* Enable scrolling if content overflows */
+  }
 }

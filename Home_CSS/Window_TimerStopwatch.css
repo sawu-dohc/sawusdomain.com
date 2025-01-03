@@ -1,16 +1,27 @@
-
-#stopwatch-container, #timer-container {
+#TimerStopwatch_Window #stopwatch-container {
     margin: 1rem auto;
     text-align: center;
-
-}
-
-#stopwatch-display, #timer-display {
+  }
+  
+  #TimerStopwatch_Window #timer-container {
+    margin: 1rem auto;
+    text-align: center;
+  }
+  
+  #TimerStopwatch_Window #stopwatch-display {
     font-size: 1.5rem;
     margin: 0.5rem auto;
-    color: #000; 
+    color: #000;
     width: fit-content;
-}
+  }
+  
+  #TimerStopwatch_Window #timer-display {
+    font-size: 1.5rem;
+    margin: 0.5rem auto;
+    color: #000;
+    width: fit-content;
+  }
+  
 #TimerStopwatch_Window .window-body button {
     cursor: pointer;
     background-color: #c0c0c0;
