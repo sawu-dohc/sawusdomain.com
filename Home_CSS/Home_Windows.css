@@ -1,5 +1,5 @@
 .window {
-  
+
   position: absolute;
 
   top: 50%;
@@ -13,6 +13,7 @@
   border: .25rem solid #808080;
   border-top-color: #ffffff;
   border-left-color: #ffffff;
+  z-index: 20;
 }
 
 .window-body {
@@ -114,20 +115,5 @@
 
 
 @media (max-width: 1400px) {
-  .window {
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    position: fixed; /* Fixed position relative to viewport */
-    top: 0; /* Remove transform */
-    left: 0; /* Remove transform */
-    transform: none; /* No need for centering via translate */
-    z-index: 10; /* Ensure it appears above other elements */
-    padding: 0; /* Remove extra padding for full-screen effect */
-  }
 
-  .window-body {
-    padding: 1rem; /* Maintain consistent padding for content */
-    box-sizing: border-box;
-    overflow-y: auto; /* Enable scrolling if content overflows */
-  }
 }

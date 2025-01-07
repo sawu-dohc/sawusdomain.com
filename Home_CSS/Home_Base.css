@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'W95FA';
-  src: url('../Home_Assets/W95FA.otf'); 
+  src: url('../Home_Assets/W95FA.otf') format('opentype'); 
+
 }
 
-
-html,body {
+body {
   font-family: 'W95FA'; /* Apply font globally */
   margin: 0;
   padding: 0;
@@ -21,8 +21,7 @@ body {
 }
 main {
 
-  height: calc(100vh - 4rem); 
-  overflow: hidden;
+  height: calc(100vh - 4.5rem); 
   box-sizing: border-box;
 }
 
@@ -34,9 +33,11 @@ main {
 
 
 @media (max-width: 1080px) {
-  html, body {
+
+  body {
     font-family: 'W95FA';
   }
+
 }
 
 

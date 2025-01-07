@@ -80,80 +80,27 @@
 }
 
 
-@media (max-width: 1400px) {
 
-}
-
-#taskContainer {
-  display: flex;
-  gap: 0.25rem;
-  height: 100%; 
-  padding-left: 0.25rem;
-  box-sizing: border-box; 
-  flex-grow: 1; 
-  overflow: hidden;
-
-}
-
-.taskbar-entry {
-  display:none;
-  align-items: center;
-  justify-content: flex-start; 
-  height: 100%; 
-  padding: 0 0.5rem; 
-
-  font-size: 1.5rem; 
-  color: #000000;
-  cursor: pointer;
-  white-space: nowrap; 
-  overflow: hidden; 
-  
-
-  flex: 1 0 auto; 
-  max-width: 12rem; 
-  min-width: 6rem; 
-
-  background-color: #c0c0c0;
-  border: 0.25rem solid #808080;
-  border-top-color: #eaeaea;
-  border-left-color: #eaeaea;
-}
-
-.taskbar-entry img {
-  width: 2rem;
-  height: 2rem;
-  margin-right: 0.5rem; 
-  object-fit: contain; 
-}
-
-.taskbar-entry span {
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
-}
-
-
-.taskbar-entry:hover {
-  background-color: #d0d0d0;
-  border-top-color: #808080;
-  border-left-color: #808080;
-  border-right-color: #eaeaea;
-  border-bottom-color: #eaeaea;
-}
-
-.active-taskbar-entry {
-  background-color: #d0d0d0;
-  border-top-color: #808080;
-  border-left-color: #808080;
-  border-right-color: #eaeaea;
-  border-bottom-color: #eaeaea;
-}
-
-@media (max-width: 1080px) {
-  #taskbar,
-  #start-menu {
-    display: none; /* Hide taskbar and start menu */
+@media (max-width: 1200px) {
+  #taskbar {
+    display: none;
   }
+}
+
+
+#clock{
+  height: 3.5rem; /* Uniform height for all elements */
+  display: flex;
+  align-items: center;
+  box-sizing: border-box; /* Ensure padding and borders are included in the height */
+}  
+
+
+
+
+#start-button{
+  height: 3.5rem; /* Uniform height for all elements */
+  display: flex;
+  align-items: center;
+  box-sizing: border-box; /* Ensure padding and borders are included in the height */
 }
