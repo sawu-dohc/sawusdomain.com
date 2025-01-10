@@ -24,25 +24,26 @@ class Icon {
     }
 
     createIconElement() {
-        const td = document.createElement("td");
-        td.id = this.string_divID;
-
+        const container = document.createElement("div"); // Use a <div> for internal content
+        container.id = this.string_divID;
+        container.classList.add("icon-container"); // Add a class for styling
+    
         const img = document.createElement("img");
         img.src = this.string_imgSrc;
         img.alt = this.string_title;
-        td.appendChild(img);
-
+        container.appendChild(img);
+    
         const h2 = document.createElement("h2");
         h2.textContent = this.string_title;
-        td.appendChild(h2);
-
-        return td;
+        container.appendChild(h2);
+    
+        const description = document.createElement("p");
+        description.textContent = this.string_description; // Add the description text
+        container.appendChild(description);
+    
+        return container;
     }
-
-    handleIconClick(item, index) {
-        console.log(`Icon for ${this.string_title} clicked!`);
-        // Handle interactions (e.g., open window, navigate to link, etc.)
-    }
+    
 
     handleIconClick(sourceObject, index) {
         console.log(`${this.string_title} clicked!`);
@@ -54,9 +55,21 @@ class Icon {
         else if (sourceObject instanceof App || sourceObject instanceof Dir) {
             // Handle App and Directory objects
             const associatedWindow = document.getElementById(`window-${index}`);
+            const associatedTask = document.getElementById(`task-${index}`);
+    
             if (associatedWindow) {
                 // Make the window visible
                 associatedWindow.style.display = "flex";
+    
+                // Bring the window to the front
+                this.bringWindowToFront(associatedWindow);
+    
+                // Make the associated task visible
+                if (associatedTask) {
+                    associatedTask.style.display = "flex";
+                } else {
+                    console.warn(`No task found for ${sourceObject.constructor.name} with index: task-${index}`);
+                }
             } else {
                 console.warn(`No window found for ${sourceObject.constructor.name} with index: window-${index}`);
             }
@@ -65,6 +78,17 @@ class Icon {
             // Handle any other type of source object
             console.warn(`Unhandled sourceObject type for: ${this.string_title}`);
         }
+    }
+    
+    bringWindowToFront(windowElement) {
+        // Reset z-index for all windows
+        const allWindows = document.querySelectorAll(".window");
+        allWindows.forEach(win => {
+            win.style.zIndex = 1; // Send all windows to the background
+        });
+    
+        // Bring the selected window to the front
+        windowElement.style.zIndex = 1000;
     }
     
     

@@ -82,6 +82,6 @@
   color: black; /* Default color for links */
 }
 
-@media (max-width: 1400px) {
-  /* Add responsive styles if needed */
+@media (max-width: 750px) {
+
 }

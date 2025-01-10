@@ -1,76 +1,115 @@
 #desktop-table {
-  width: 100%;              
-  height: 100%;             
-  table-layout: fixed;
-  padding: 1rem;
+  display: grid;
+  grid-auto-flow: column; /* Fill columns first */
+  grid-template-rows: repeat(auto-fill, minmax(10rem, 1fr)); /* Dynamically adjust row height */
+  justify-content: start; /* Align grid to the right (desktop-like layout) */
+
+  padding: 1rem; /* Padding around the grid */
+  max-width: 100%; /* Allow the grid to stretch across the available space */
+  height: calc(100vh - 4.5rem); /* Full height minus taskbar */
+  box-sizing: border-box; /* Include padding and border in dimensions */
+
 }
 
-#desktop-table tr {
-  display: flex;            
-  width: 100%;              
-  height: 20%;              
-}
-
-/* Icon styling */
-#desktop-table td {
-  position: relative; /* Parent element for positioning */
-  overflow: visible; /* Allow child elements to overflow the parent */
-  max-width: 13rem; /* Ensure icons don’t get too large */
-  min-width: 3rem; /* Prevent icons from shrinking too small */
+#desktop-table div {
   display: flex;
-  flex: 1; 
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
-#desktop-table td img {
-  width: 100%; 
+#desktop-table img {
+  max-width: 6rem;
   height: auto;
-  max-width: 6rem; 
-  min-width: 2rem; 
   cursor: pointer;
 }
 
-#desktop-table td h2 { /* Title */
-  font-size: 1.5rem; 
-  font-weight: lighter;
-  color: #ffffff;
+#desktop-table h2 {
+  font-size: 1.25rem;
+  color: white;
   margin: 0;
-  overflow: hidden; 
-  text-overflow: ellipsis;
-  max-width: 12rem; 
+  font-weight: lighter;
+  overflow: hidden;
+  width: 100%;
   height: 100%;
+
+
 }
 
-#desktop-table td p { /* Tooltip */
+.icon-container {
+  width: 10rem; /* Fixed width for icon containers */
+  height: 15rem; /* Fixed height for icon containers */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Distribute image and text evenly */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.icon-container p {
   position: absolute;
   visibility: hidden;
   background-color: rgb(254, 255, 218);
-  bottom: 30%; /* Position the tooltip above the <td> */
-  left: +70%; /* Center tooltip horizontally */
-  border-width: 0.2rem;
-  border-style: solid;
-  border-color: black;
+  bottom: 25%; /* Position above the icon */
+  left: 75%;
+  height: 0%;
+
+  border: 0.2rem solid black;
   color: #000000;
-  padding: 0.5rem;
+
   font-size: 1.25rem;
   font-family: 'W95FA', sans-serif;
-  text-align: left; /* Align text to the left */
-  white-space: nowrap; /* Prevent text wrapping */
+  width:100%;
   z-index: 10;
+  
 }
 
-#desktop-table td img:hover ~ p {
-  visibility: visible; /* Make the tooltip visible on image hover */
+.icon-container:hover p {
+
 }
+@media (max-width: 750px) {
 
+  #desktop-table {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+    gap: 1rem;
+    width: 100vw;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    overflow: visible; /* Allow content to expand */
+    justify-items: center;
+    align-items: center;
+    grid-auto-flow: row;
+  }
+  
+  
+  .icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center icon and text horizontally */
+    justify-content: center; /* Center content vertically */
+    text-align: center;
+    width: 7em; /* Fixed width for consistency */
+    height: 12rem; /* Fixed height for the container */
+    box-sizing: border-box; /* Include padding and borders in dimensions */
+    overflow: hidden; /* Prevent overflowing content */
+    margin: 0; /* Remove unnecessary margins */
 
+  }
 
+  #desktop-table img {
+    padding-top: 1rem;
+    max-width:7rem; /* Restrict icon size */
+    height: auto;
+  }
 
-@media (max-width: 100px) {
-  #desktop-table { 
-    display: none;
+  #desktop-table h2 {
+    font-size: 1.125rem; /* Adjust text size */
+    height: 9em; /* Fixed height for titles */
+    width:fit-content;
+    padding-top: .25rem;
+    text-align: center;
   }
 }

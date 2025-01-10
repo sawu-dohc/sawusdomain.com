@@ -1,4 +1,4 @@
-#TimeConverter_Window #calculateButton {
+#window-4 #calculateButton {
   font-family: 'W95FA', sans-serif;
   cursor: pointer;
   background-color: #c0c0c0;
@@ -9,7 +9,7 @@
   margin: 1rem;
 }
 
-#TimeConverter_Window #calculateButton:active {
+#window-4 #calculateButton:active {
   background-color: #d0d0d0;
   border-top-color: #808080;
   border-left-color: #808080;
@@ -17,23 +17,25 @@
   border-bottom-color: #eaeaea;
 }
 
-#TimeConverter_Window .window-body {
+#window-4 .window-body {
   background-color: #d0d0d0;
   border: none;
   align-items: center;
   justify-content: center;
+  height: 35vh;
 }
 
-#TimeConverter_Window input {
-  width: 7rem;
+#window-4 input {
+  width: 6rem;
+  height: 2rem;
 }
 
-#TimeConverter_Window #result {
+#window-4 #result {
   margin-top: 1rem;
   font-weight: bold;
 }
 
-#TimeConverter_Window #alertBox {
+#window-4 #alertBox {
   color: #cc0000;
   font-weight: bold;
   font-size: 1rem;
@@ -41,6 +43,10 @@
   padding: 1rem;
 }
 
-#TimeConverter_Window p {
+#window-4 p {
   text-align: justify;
+}
+
+#window-4 .toolbar{
+  display:none;
 }

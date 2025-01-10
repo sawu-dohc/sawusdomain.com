@@ -1,29 +1,29 @@
-#TemperatureConverter_Window .temperature-converter {
+#window-3 .temperature-converter {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
 }
 
-#TemperatureConverter_Window .temperature-converter label {
+#window-3  .temperature-converter label {
   font-size: 1rem;
   font-weight: bold;
 }
 
-#TemperatureConverter_Window .temperature-converter input {
+#window-3  .temperature-converter input {
   width: 150px;
   padding: 5px;
   font-size: 1rem;
   text-align: center;
 }
 
-#TemperatureConverter_Window .arrow {
+#window-3  .arrow {
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
 }
 
-#TemperatureConverter_Window .window-body {
+#window-3  .window-body {
   align-items: center;
   flex-direction: column;
   background-color: #d0d0d0;
@@ -31,4 +31,11 @@
   padding: 15px;
   font-family: Arial, sans-serif;
   border: none;
+}
+
+#window-3 .window-body {
+  height: 35vh;
+}
+#window-3 .toolbar{
+  display:none;
 }

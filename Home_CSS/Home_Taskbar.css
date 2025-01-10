@@ -1,28 +1,31 @@
 #taskbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background-color: #c0c0c0;
-
-  border-top: 0.25rem solid #eaeaea;
-  border-left: 0.25rem solid #eaeaea;
-  border-right: 0.25rem solid #808080;
-  border-bottom: 0.25rem solid #808080;
-
-  height: 4.5rem;
-  min-height: 2rem;
-  width: 100%;
-  box-sizing: border-box;
-  position: fixed;
-  bottom: 0; 
-  padding: 0.12rem; 
+  justify-content: space-between; /* Distribute child elements evenly */
+  background-color: #c0c0c0; /* Match Windows 95 theme */
+  border: 0.25rem solid #808080; /* Add taskbar borders */
+  border-top-color: #eaeaea; /* Lighten top border for 3D effect */
+  border-left-color: #eaeaea; /* Lighten left border for 3D effect */
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  height: 4.5rem; /* Taskbar height */
+  width: 100%; /* Full-width taskbar */
+  padding: 0.25rem; /* Add consistent padding inside the taskbar */
+  box-sizing: border-box; /* Include padding and borders in dimensions */
+  position: relative; /* Change position to prevent overlapping */
 }
+
 
 #start-button {
   display: flex;
   align-items: center;
-  padding-left: .75rem;
-  padding-right: .5rem;
+  font-size: 2rem; 
+
+  height: 3.5rem; /* Uniform height for all elements */
+  box-sizing: border-box; /* Ensure padding and borders are included in the height */
+
+  padding: 1rem;
+  padding: .25rem;
   margin-left: .25rem;
 
   background-color: #c0c0c0;
@@ -32,10 +35,11 @@
 
   cursor: pointer;
 
-  font-size: 2.75rem; 
-  text-shadow: none;
+  
+
 
 }
+
 #start-button:active, #start-button.clicked {
   background-color: #d0d0d0;
   border-top-color: #808080;
@@ -54,13 +58,15 @@
 #clock {
   display: flex;
   align-items: center;
+
+  height: 3.5rem; /* Uniform height for all elements */
+  box-sizing: border-box; /* Ensure padding and borders are included in the height */
+
   padding-left: .5rem;
   padding-top: .25rem;
   padding-bottom: .25rem;
-  margin-right: .125rem;
+  margin-right: .25rem;
   margin-left: .25rem;
-
-
 
   background-color: #c0c0c0;
   border: 0.25rem solid #808080;
@@ -69,7 +75,9 @@
   border-right-color: #eaeaea;
   border-bottom-color: #eaeaea;
 }
+
 #clock span {
+
   display: inline-block; 
   width: 10rem; 
   height: 2.5rem; 
@@ -81,26 +89,14 @@
 
 
 
-@media (max-width: 1200px) {
+@media (max-width: 750px) {
   #taskbar {
     display: none;
   }
 }
 
 
-#clock{
-  height: 3.5rem; /* Uniform height for all elements */
-  display: flex;
-  align-items: center;
-  box-sizing: border-box; /* Ensure padding and borders are included in the height */
-}  
 
 
 
 
-#start-button{
-  height: 3.5rem; /* Uniform height for all elements */
-  display: flex;
-  align-items: center;
-  box-sizing: border-box; /* Ensure padding and borders are included in the height */
-}

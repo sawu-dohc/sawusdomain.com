@@ -76,3 +76,11 @@
     align-items: center;
     box-sizing: border-box; /* Ensure padding and borders are included in the height */
 } 
+/* Active (clicked) state */
+.taskbar-entry:active {
+    background-color: #d0d0d0; /* Slightly darker background */
+    border-top-color: #808080; /* Dark shadow on top */
+    border-left-color: #808080;
+    border-right-color: #eaeaea; /* Light highlight on right */
+    border-bottom-color: #eaeaea;
+}

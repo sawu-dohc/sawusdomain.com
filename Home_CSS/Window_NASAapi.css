@@ -1,20 +1,45 @@
-#NASAapi_Window .window-body {
-    padding: 2rem;
+#window-2 .window-body {
+    padding: 1rem;
     color: #333;
-    background:#d0d0d0; 
+    background: #d0d0d0; 
     border: none;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+ 
+    box-sizing: border-box; /* Include padding in dimensions */
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+
 }
 
-
-#NASAapi_Window .date-picker {
+#window-2 .date-picker {
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 1rem; /* Add spacing between label, input, and button */
     padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
+#window-2 .date-picker label {
+    font-size: 1rem;
+    color: #000;
+    font-family: 'W95FA', sans-serif;
+}
 
-#NASAapi_Window .date-picker button {
+#window-2 .date-picker input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 0.125rem solid #808080;
+    border-top-color: #eaeaea;
+    border-left-color: #eaeaea;
+    background-color: #fff;
+    box-sizing: border-box;
+    width: auto;
+}
+
+#window-2 .date-picker button {
     background-color: #c0c0c0; 
     cursor: pointer;
     border: 0.25rem solid #808080; 
@@ -22,10 +47,14 @@
     border-left-color: #ffffff; 
     border-right-color: #808080; 
     border-bottom-color: #808080;
-    margin:1rem;
+    padding: 0.5rem 1rem;
+    font-family: 'W95FA', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    box-sizing: border-box;
 }
 
-#NASAapi_Window .date-picker button:active {
+#window-2 .date-picker button:active {
     background-color: #d0d0d0; 
     border-top-color: #808080; 
     border-left-color: #808080;
@@ -33,21 +62,65 @@
     border-bottom-color: #ffffff;
 }
 
-
-#NASAapi_Window #warning {
+#window-2 #warning {
     font-size: 1rem;
     font-weight: bold;
     color: rgb(255, 0, 0);
-}
-
-#NASAapi_Window #dataContainer {
-    display: block;
+    margin: 1rem 0;
     text-align: center;
-    justify-content: center;
-    align-items: center;
 }
 
-#NASAapi_Window #dataContainer img {
-    width: 50%;
-    padding: 1rem;
+#window-2 #dataContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#window-2 #dataContainer img {
+    max-width: 100%; /* Make the image responsive */
+    height: auto;
+    padding: .25rem;
+}
+
+#window-2 #imageDescription {
+    margin-top: .5rem;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    text-align: justify;
+    padding: .5rem;
+    max-width: 100%; /* Constrain description width */
+    box-sizing: border-box;
+}
+#window-2 .toolbar{
+    display:none;
+}
+
+#window-2 #getButton {
+    background-color: #c0c0c0; /* Windows 95 grey */
+    color: black;
+    font-family: 'W95FA', sans-serif; /* Apply Windows 95 font if available */
+    font-size: 1rem; /* Match button text size */
+    font-weight: bold;
+    padding: 0.5rem 1rem; /* Add padding for a classic button feel */
+    border: 0.25rem solid #808080; /* Outer border for 3D effect */
+    border-top-color: #ffffff; /* Highlight for top edge */
+    border-left-color: #ffffff; /* Highlight for left edge */
+    border-right-color: #808080; /* Shadow for right edge */
+    border-bottom-color: #808080; /* Shadow for bottom edge */
+    box-sizing: border-box; /* Include padding and borders in dimensions */
+    cursor: pointer;
+    text-align: center; /* Center text */
+}
+
+#window-2 #getButton:active {
+    background-color: #d0d0d0; /* Pressed button color */
+    border-top-color: #808080; /* Shadow on top edge when pressed */
+    border-left-color: #808080; /* Shadow on left edge when pressed */
+    border-right-color: #ffffff; /* Highlight on right edge when pressed */
+    border-bottom-color: #ffffff; /* Highlight on bottom edge when pressed */
 }

@@ -46,7 +46,10 @@ class Window {
         titleBarText.id = "TitleBarText";
         titleBarText.className = "title-text";
         titleBarText.textContent = this.string_title;
-
+        // Add event listener to bring the window to the front on title bar click
+        titleBar.addEventListener("mousedown", () => {
+            this.bringToFront();
+        });
         // title bar controls
         const titleBarControls = document.createElement("div");
         titleBarControls.id = "TitleBarControls";
@@ -56,13 +59,13 @@ class Window {
         minimizeButton.id = "MinimizeButton";
         minimizeButton.className = "title-bar-control-button";
         minimizeButton.textContent = "_";
-        minimizeButton.setAttribute("onclick", `minimizeWindow('${this.string_divID}')`);
+        minimizeButton.addEventListener("click", ()=> this.minimizeWindow());
         // maximize button
         const maximizeButton = document.createElement("button");
         maximizeButton.id = "MaximizeButton";
         maximizeButton.className = "title-bar-control-button";
         maximizeButton.textContent = "🗖";
-        maximizeButton.setAttribute("onclick", `maximizeWindow('${this.string_divID}')`);
+        maximizeButton.addEventListener("click",() => this.maximizeWindow());
         // close button
         const closeButton = document.createElement("button");
         closeButton.id = "CloseButton";
@@ -140,9 +143,73 @@ class Window {
     }
 
     maximizeWindow() {
-        console.log(`Maximizing window: ${this.string_title}`);
-        // Add logic to maximize the window if needed
+        console.log(`Toggling maximize for window: ${this.string_title}`);
+    
+        const windowElement = this.element_window;
+    
+        if (windowElement.classList.contains("maximized")) {
+            // Restore to original size and position
+            windowElement.classList.remove("maximized");
+    
+            // Restore original dimensions and position
+            windowElement.style.width = this.originalWidth || "auto";
+            windowElement.style.height = this.originalHeight || "auto";
+            windowElement.style.top = this.originalTop || "50%";
+            windowElement.style.left = this.originalLeft || "50%";
+            windowElement.style.transform = "translate(-50%, -50%)";
+        } else {
+            // Save current dimensions and position before maximizing
+            this.originalWidth = windowElement.style.width;
+            this.originalHeight = windowElement.style.height;
+            this.originalTop = windowElement.style.top;
+            this.originalLeft = windowElement.style.left;
+    
+            // Add the maximized class
+            windowElement.classList.add("maximized");
+    
+            // Reset inline styles to let the class control layout
+            windowElement.style.width = "";
+            windowElement.style.height = "";
+            windowElement.style.top = "";
+            windowElement.style.left = "";
+            windowElement.style.transform = "";
+        }
     }
+    
+  
+    setWindowBody(content) {
+        const windowBody = this.element_window.querySelector(".window-body");
+
+        console.log(`Setting window body for: ${ this.string_title }`); 
+
+        
+            if (typeof content === "string") {
+                windowBody.innerHTML = content;
+            } 
+            else if ( content instanceof HTMLElement ) {
+                windowBody.innerHTML = "";
+                windowBody.appendChild(content);
+            } 
+            else {
+                console.warn("Invalid content type for window body.");
+            }
+        
+    }
+
+
+    bringToFront() {
+        console.log(`Bringing window to front: ${this.string_title}`);
+
+        // Reset z-index for all windows
+        const allWindows = document.querySelectorAll(".window");
+        allWindows.forEach(win => {
+            win.style.zIndex = 1;
+        });
+
+        // Set this window's z-index to a high value
+        this.element_window.style.zIndex = 1000;
+    }
+    
 }
 
     
